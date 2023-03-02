@@ -2,15 +2,20 @@ package by.delfihealth.salov.glucoreader;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import javafx.stage.StageStyle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+
 
 import java.io.IOException;
 
@@ -25,6 +30,9 @@ public class GlucoReaderApplication extends Application {
 
       //JavaFx window root
       private Parent windowRoot;
+
+      private double xOffset = 0;
+      private double yOffset = 0;
 
       //Initialize spring, load resources before start, and run window root
       @Override
@@ -57,10 +65,38 @@ public class GlucoReaderApplication extends Application {
       @Override
       public void start(Stage primaryStage) throws Exception {
 
+
+
+            primaryStage.initStyle(StageStyle.TRANSPARENT);
+            //stage.initStyle(StageStyle.UNDERDECORATED);
+
+            //grab your root here
+            windowRoot.setOnMousePressed(new EventHandler<MouseEvent>() {
+                  @Override
+                  public void handle(MouseEvent event) {
+                        xOffset = event.getSceneX();
+                        yOffset = event.getSceneY();
+                  }
+            });
+
+            //move around here
+            windowRoot.setOnMouseDragged(new EventHandler<MouseEvent>() {
+                  @Override
+                  public void handle(MouseEvent event) {
+                        primaryStage.setX(event.getScreenX() - xOffset);
+                        primaryStage.setY(event.getScreenY() - yOffset);
+                  }
+            });
+
             primaryStage.setTitle("GlucoReader");
-            primaryStage.setScene(
-                  new Scene(windowRoot, 600, 400)
-            );
+
+            primaryStage.getIcons().add(new Image("/png/erythrocytes.png"));
+
+            /*Show the location of the CSS resource file*/
+            String css = this.getClass().getResource("/fxml/index.css").toExternalForm();
+            Scene scene = new Scene(windowRoot, 600, 400);
+            scene.getStylesheets().add(css);
+            primaryStage.setScene(scene);
             primaryStage.show();
       }
 
