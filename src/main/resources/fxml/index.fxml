@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.WebView?>
+<StackPane fx:id="indexStackPane"
+           xmlns="http://javafx.com/javafx/18"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="by.delfihealth.salov.glucoreader.fx.IndexController"
+>
+    <children>
+        <WebView fx:id="indexWebView"/>
+    </children>
+</StackPane>
+
