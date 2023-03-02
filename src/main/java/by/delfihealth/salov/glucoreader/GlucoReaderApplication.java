@@ -31,8 +31,8 @@ public class GlucoReaderApplication extends Application {
       //JavaFx window root
       private Parent windowRoot;
 
-      private double xOffset = 0;
-      private double yOffset = 0;
+/*      private double xOffset = 0;
+      private double yOffset = 0;*/
 
       //Initialize spring, load resources before start, and run window root
       @Override
@@ -67,9 +67,9 @@ public class GlucoReaderApplication extends Application {
 
 
 
-            primaryStage.initStyle(StageStyle.TRANSPARENT);
+            //primaryStage.initStyle(StageStyle.TRANSPARENT);
             //stage.initStyle(StageStyle.UNDERDECORATED);
-
+/*
             //grab your root here
             windowRoot.setOnMousePressed(new EventHandler<MouseEvent>() {
                   @Override
@@ -86,7 +86,7 @@ public class GlucoReaderApplication extends Application {
                         primaryStage.setX(event.getScreenX() - xOffset);
                         primaryStage.setY(event.getScreenY() - yOffset);
                   }
-            });
+            });*/
 
             primaryStage.setTitle("GlucoReader");
 
