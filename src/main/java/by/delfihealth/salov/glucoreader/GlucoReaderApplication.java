@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -54,6 +56,7 @@ public class GlucoReaderApplication extends Application {
       //Set window stage settings and show it
       @Override
       public void start(Stage primaryStage) throws Exception {
+
             primaryStage.setTitle("GlucoReader");
             primaryStage.setScene(
                   new Scene(windowRoot, 600, 400)
