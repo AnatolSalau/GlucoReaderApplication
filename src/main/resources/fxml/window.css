@@ -13,15 +13,15 @@
 }
 
 #root {
-      -fx-background-color: lightblue;
+      -fx-background-color: #EAEAEA;
       -fx-min-width: 500;
       -fx-min-height: 500;
 }
 
 #webView {
-      -fx-background-color: lightblue;
+      -fx-background-color: #EAEAEA;
 }
 #titleWindow {
       -fx-pref-height: 30;
-      -fx-background-color: red;
+      -fx-background-color: #344742;
 }
