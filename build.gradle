@@ -21,6 +21,10 @@ repositories {
 dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation 'io.github.micheljung:fxstage:0.8.3'
+    implementation 'io.github.micheljung:jfx-waitomo-theme:0.3.0'
+
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

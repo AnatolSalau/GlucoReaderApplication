@@ -10,10 +10,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 @Component
-public class IndexController implements Initializable {
+public class WindowController implements Initializable {
 
       @FXML
-      private WebView indexWebView;
+      private WebView webView;
 
       private String link = getClass().getResource(
             "/static/index.html"
@@ -23,7 +23,7 @@ public class IndexController implements Initializable {
 
       @Override
       public void initialize(URL location, ResourceBundle resources) {
-            engine = indexWebView.getEngine();
+            engine = webView.getEngine();
             engine.setJavaScriptEnabled(true);
             engine.load(link);
       }
