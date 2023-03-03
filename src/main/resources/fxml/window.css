@@ -19,3 +19,7 @@
 #webView {
       -fx-background-color: coral;
 }
+
+#preloader {
+      -fx-background-color: green;
+}

@@ -27,6 +27,11 @@ public class GlucoReaderApplication extends Application {
       //SpringContext
       private ConfigurableApplicationContext configurableApplicationContext;
 
+      //Fxml resources
+      private StackPane root;
+      private String windowCss;
+      private  Image titleImage;
+
 
       //Initialize spring, load resources before start, and run window root
       @Override
@@ -42,24 +47,28 @@ public class GlucoReaderApplication extends Application {
             //load JavaFX controllers which load like beans from context
             windowFXML.setControllerFactory(configurableApplicationContext::getBean);
 
+            //Load resources
+            root = FXMLLoader.load(getClass().getResource("/fxml/window.fxml"));
+            windowCss = getClass().getResource("/fxml/window.css").toExternalForm();
+            titleImage = new Image("/png/erythrocytes.png");
+
       }
 
       //Set window stage settings and show it
       @Override
       public void start(Stage primaryStage) throws Exception {
 
-            StackPane root = FXMLLoader.load(getClass().getResource("/fxml/window.fxml"));
-
             FxStage.configure(primaryStage)
                   .withContent(root)
                   .apply();
+
             Scene scene = primaryStage.getScene();
 
             WaitomoTheme.apply(scene);
 
-            scene.getStylesheets().add(getClass().getResource("/fxml/window.css").toExternalForm());
-            Image image = new Image("/png/erythrocytes.png");
-            primaryStage.getIcons().add(image);
+            scene.getStylesheets().add(windowCss);
+
+            primaryStage.getIcons().add(titleImage);
             primaryStage.setTitle("Title");
             primaryStage.show();
       }
