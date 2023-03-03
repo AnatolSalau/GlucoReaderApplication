@@ -4,8 +4,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import org.springframework.stereotype.Component;
@@ -24,7 +22,7 @@ public class WindowController implements Initializable {
 
 
       private String link = getClass().getResource(
-            "/ui/index.html"
+            "/ui/build/index.html"
       ).toExternalForm();
 
       private WebEngine engine;
