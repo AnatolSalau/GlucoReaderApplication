@@ -2,6 +2,8 @@ package by.delfihealth.salov.glucoreader.fx;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.effect.BlendMode;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.web.WebEngine;
@@ -15,7 +17,7 @@ import java.util.ResourceBundle;
 public class WindowController implements Initializable {
 
       @FXML
-      private StackPane root;
+      private BorderPane root;
 
       @FXML
       private WebView webView;
@@ -29,8 +31,10 @@ public class WindowController implements Initializable {
 
       @Override
       public void initialize(URL location, ResourceBundle resources) {
-/*            engine = webView.getEngine();
+            webView.setBlendMode(BlendMode.DARKEN);
+            webView.setContextMenuEnabled(false);
+            engine = webView.getEngine();
             engine.setJavaScriptEnabled(true);
-            engine.load(link);*/
+            engine.load(link);
       }
 }

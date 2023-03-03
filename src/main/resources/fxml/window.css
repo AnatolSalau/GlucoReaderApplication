@@ -12,14 +12,16 @@
       -icon-paint: white;
 }
 
-#stackPane {
-      -fx-background-color: coral;
+#root {
+      -fx-background-color: lightblue;
+      -fx-min-width: 500;
+      -fx-min-height: 500;
 }
 
 #webView {
-      -fx-background-color: coral;
+      -fx-background-color: lightblue;
 }
-
-#preloader {
-      -fx-background-color: green;
+#titleWindow {
+      -fx-pref-height: 30;
+      -fx-background-color: red;
 }

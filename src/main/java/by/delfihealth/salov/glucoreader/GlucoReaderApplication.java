@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -17,6 +18,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 /**
  * SpringBoot with JavaFX UI
@@ -27,11 +29,8 @@ public class GlucoReaderApplication extends Application {
       //SpringContext
       private ConfigurableApplicationContext configurableApplicationContext;
 
-      //Fxml resources
-      private StackPane root;
-      private String windowCss;
-      private  Image titleImage;
-
+      public GlucoReaderApplication() throws IOException {
+      }
 
       //Initialize spring, load resources before start, and run window root
       @Override
@@ -48,19 +47,24 @@ public class GlucoReaderApplication extends Application {
             windowFXML.setControllerFactory(configurableApplicationContext::getBean);
 
             //Load resources
-            root = FXMLLoader.load(getClass().getResource("/fxml/window.fxml"));
-            windowCss = getClass().getResource("/fxml/window.css").toExternalForm();
-            titleImage = new Image("/png/erythrocytes.png");
+
 
       }
 
       //Set window stage settings and show it
       @Override
       public void start(Stage primaryStage) throws Exception {
+            primaryStage.setOpacity(0.0);
+
+            //Fxml resources
+            BorderPane root = FXMLLoader.load(getClass().getResource("/fxml/window.fxml"));
+            String windowCss = getClass().getResource("/fxml/window.css").toExternalForm();
+            Image titleImage = new Image("/png/erythrocytes.png");
 
             FxStage.configure(primaryStage)
                   .withContent(root)
                   .apply();
+
 
             Scene scene = primaryStage.getScene();
 
@@ -70,7 +74,12 @@ public class GlucoReaderApplication extends Application {
 
             primaryStage.getIcons().add(titleImage);
             primaryStage.setTitle("Title");
+
+
+
             primaryStage.show();
+            TimeUnit.MILLISECONDS.sleep(100);
+            primaryStage.setOpacity(1.0);
       }
 
       //Stopping app
