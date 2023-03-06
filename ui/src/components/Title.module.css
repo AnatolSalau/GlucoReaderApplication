@@ -1,0 +1,24 @@
+@font-face {
+      font-family: "MyriadPro-Semibold";   /*Can be any text*/
+      src: local("MyriadPro-Semibold"),
+      url("../fonts/MyriadPro-Semibold.ttf") format("truetype");
+}
+
+.title {
+      display: flex;
+      gap: 39px;
+      padding-left:  26px;
+      align-items: center;
+      background-color: #40B0A5;
+      height: 64px;
+      font-family: 'MyriadPro-Semibold' ;
+      font-style: normal;
+      font-size: 38px;
+      line-height: 38px;
+      color: #FFFFFF;
+
+}
+img {
+      height: 43px;
+      width: 70px;
+}

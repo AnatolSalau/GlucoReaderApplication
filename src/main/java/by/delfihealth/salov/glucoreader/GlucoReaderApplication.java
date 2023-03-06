@@ -75,8 +75,6 @@ public class GlucoReaderApplication extends Application {
             primaryStage.getIcons().add(titleImage);
             primaryStage.setTitle("Title");
 
-
-
             primaryStage.show();
             TimeUnit.MILLISECONDS.sleep(100);
             primaryStage.setOpacity(1.0);

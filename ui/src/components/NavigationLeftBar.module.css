@@ -1,0 +1,17 @@
+.navigationLeftbar {
+      flex: none;
+      background-color: #2E4648;
+      width: 120px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding-top: 50px;
+}
+
+.button {
+      height: 53px;
+      width: 57px;
+      border-radius: 4px;
+}

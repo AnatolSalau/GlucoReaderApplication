@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 
 @Component
 public class WindowController implements Initializable {
@@ -29,10 +30,17 @@ public class WindowController implements Initializable {
 
       @Override
       public void initialize(URL location, ResourceBundle resources) {
+            root.setOpacity(0);
             webView.setBlendMode(BlendMode.DARKEN);
             webView.setContextMenuEnabled(false);
             engine = webView.getEngine();
             engine.setJavaScriptEnabled(true);
             engine.load(link);
+
+            double startOpacity = 0;
+            for (int i = 0; i < 100000; i++) {
+                  startOpacity += 0.0001;
+                  root.setOpacity(startOpacity);
+            }
       }
 }
