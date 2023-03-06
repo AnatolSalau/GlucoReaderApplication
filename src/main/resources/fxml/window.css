@@ -14,7 +14,7 @@
 }
 
 #root {
-      -fx-background-color: #EAEAEA;
+      -fx-background-color: white;
       -fx-min-width: 500;
       -fx-min-height: 500;
 }
@@ -24,5 +24,8 @@
 }
 #titleWindow {
       -fx-pref-height: 30;
+      -fx-background-color: #344742;
+}
+#splashScreen {
       -fx-background-color: #344742;
 }
