@@ -2,6 +2,7 @@
 
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.web.WebView?>
 
@@ -10,10 +11,11 @@
       <StackPane fx:id="pane">
           <children>
               <WebView fx:id="webView" />
+              <Pane fx:id="splashScreen" />
           </children>
       </StackPane>
    </center>
    <top>
-      <HBox fx:id="titleWindow"  BorderPane.alignment="CENTER" />
+      <HBox fx:id="titleWindow" BorderPane.alignment="CENTER" />
    </top>
 </BorderPane>
