@@ -1,0 +1,25 @@
+@font-face {
+      font-family: "MyriadPro-Semibold";   /*Can be any text*/
+      src: local("MyriadPro-Semibold"),
+      url("../fonts/MyriadPro-Semibold.ttf") format("truetype");
+}
+
+.input {
+      display: flex;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 46px;
+      gap: 20px;
+      font-family: 'MyriadPro-Semibold';
+      font-style: italic;
+      font-weight: 700;
+      font-size: 19px;
+}
+.input input{
+      height: 100%;
+      outline: none;
+      background: #FFFFFF;
+      border: 1px solid #A1A2A4;
+      border-radius: 4px;
+}
