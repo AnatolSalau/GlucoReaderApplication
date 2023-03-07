@@ -1,17 +1,16 @@
 @font-face {
-      font-family: "MyriadPro-Semibold";   /*Can be any text*/
-      src: local("MyriadPro-Semibold"),
-      url("../fonts/MyriadPro-Semibold.ttf") format("truetype");
+      font-family: "MyriadPro-Semibold-Italic";   /*Can be any text*/
+      src: local("MyriadPro-Semibold-Italic"),
+      url("../fonts/MyriadPro-Semibold-Italic.ttf") format("truetype");
 }
 
 .input {
-      display: flex;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 46px;
       gap: 20px;
-      font-family: 'MyriadPro-Semibold';
+      font-family: 'MyriadPro-Semibold-Italic', sans-serif;
       font-style: italic;
       font-weight: 700;
       font-size: 19px;

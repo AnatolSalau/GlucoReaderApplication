@@ -10,11 +10,11 @@
       padding-left:  26px;
       align-items: center;
       height: 64px;
+      min-height: 64px;
       font-family: 'MyriadPro-Semibold' ;
       font-style: normal;
       font-size: 38px;
       color: #FFFFFF;
-
       background-color: #40B0A5;
 }
 

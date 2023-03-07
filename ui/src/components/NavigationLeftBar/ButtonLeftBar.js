@@ -2,10 +2,10 @@ import { MdHomeFilled }
       from 'react-icons/md' ;
 import style from './ButtonLeftBar.module.css'
 
-function ButtonLeftBar({icon}) {
+function ButtonLeftBar({children}) {
       return (
             <button className={style.button}>
-                  {icon}
+                  {children}
             </button>
       );
 }

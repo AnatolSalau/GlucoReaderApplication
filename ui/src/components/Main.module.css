@@ -1,6 +1,5 @@
 .main {
       display: flex;
-      background-color: coral;
-      height: 100vh;
-      //justify-content: space-between;
+      background-color: green;
+      flex-grow: 10;
 }

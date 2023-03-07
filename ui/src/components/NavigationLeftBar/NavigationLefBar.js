@@ -15,12 +15,11 @@ import ButtonLeftBar from "./ButtonLeftBar";
 function NavigationLefBar() {
       return (
             <div className={style.navigationLeftbar}>
-                  <ButtonLeftBar icon={MdHomeFilled()}/>
-                  <ButtonLeftBar icon={FiUser()}/>
-                  <ButtonLeftBar icon={FiFolder()}/>
-                  <ButtonLeftBar icon={BiLineChart()}/>
-                  <ButtonLeftBar icon={FiPrinter()}/>
-                  <ButtonLeftBar icon={FiArchive()}/>
+                  <ButtonLeftBar><MdHomeFilled/></ButtonLeftBar>
+                  <ButtonLeftBar><FiUser/></ButtonLeftBar>
+                  <ButtonLeftBar><BiLineChart/></ButtonLeftBar>
+                  <ButtonLeftBar><FiPrinter/></ButtonLeftBar>
+                  <ButtonLeftBar><FiArchive/></ButtonLeftBar>
             </div>
       );
 }

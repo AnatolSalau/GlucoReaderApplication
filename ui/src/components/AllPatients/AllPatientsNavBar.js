@@ -6,9 +6,7 @@ function AllPatientsNavBar() {
       return (
             <div className={style.allPatientsNavBar}>
                   <Input textInFront="Врач:" />
-                  <Button text="Добавить пациента">
-                        Добавить пациента
-                  </Button>
+                  <Button text="Добавить пациента"></Button>
                   <Input textInFront="Text" />
             </div>
       )
