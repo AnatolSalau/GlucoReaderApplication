@@ -29,3 +29,9 @@
 #splashScreen {
       -fx-background-color: #344742;
 }
+
+#progressIndicator {
+      -fx-accent: #EAEAEA;
+      -fx-pref-height: 150;
+      -fx-pref-width: 150;
+}

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.web.WebView?>
 
@@ -11,7 +11,11 @@
       <StackPane fx:id="pane">
           <children>
               <WebView fx:id="webView" />
-              <Pane fx:id="splashScreen" />
+              <StackPane fx:id="splashScreen">
+                  <children>
+                      <ProgressIndicator fx:id="progressIndicator" minHeight="-Infinity" minWidth="-Infinity" />
+                  </children>
+              </StackPane>
           </children>
       </StackPane>
    </center>

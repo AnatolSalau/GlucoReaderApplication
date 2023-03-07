@@ -44,19 +44,23 @@ public class WindowController implements Initializable {
 
 
 
-            PauseTransition pause = new PauseTransition(Duration.seconds(1));
+            PauseTransition pause = new PauseTransition(Duration.millis(1000));
             pause.setOnFinished(e -> {
                                     // Create the initial and final key frames
                   KeyValue initKeyValue = new KeyValue(splashScreen.opacityProperty(), 1);
                   KeyFrame initFrame = new KeyFrame(Duration.ZERO, initKeyValue);
                   KeyValue endKeyValue = new KeyValue(splashScreen.opacityProperty(), 0);
-                  KeyFrame endFrame = new KeyFrame(Duration.seconds(1), endKeyValue);
+                  KeyFrame endFrame = new KeyFrame(Duration.millis(500), endKeyValue);
                   // Create a Timeline object
                   Timeline timeline = new Timeline(initFrame, endFrame);
                   // Let the animation run forever
                   //timeline.setCycleCount(Timeline.INDEFINITE);
                   // Start the animation
                   timeline.play();
+                  timeline.setOnFinished( j -> {
+                        splashScreen.setVisible(false);
+                  });
+
             });
             pause.play();
 
