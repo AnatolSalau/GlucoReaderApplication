@@ -65,7 +65,6 @@ public class GlucoReaderApplication extends Application {
                   .withContent(root)
                   .apply();
 
-
             Scene scene = primaryStage.getScene();
 
             WaitomoTheme.apply(scene);

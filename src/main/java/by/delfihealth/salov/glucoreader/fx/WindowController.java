@@ -42,19 +42,20 @@ public class WindowController implements Initializable {
             engine.setJavaScriptEnabled(true);
             engine.load(linkWindow);
 
+            playSplashScreenAnimation(splashScreen, 1000,500).play();
 
+      }
 
-            PauseTransition pause = new PauseTransition(Duration.millis(1000));
+      private PauseTransition playSplashScreenAnimation( Pane pane, double pauseDuration, double visibilityChangeDuration) {
+            PauseTransition pause = new PauseTransition(Duration.millis(pauseDuration));
             pause.setOnFinished(e -> {
-                                    // Create the initial and final key frames
-                  KeyValue initKeyValue = new KeyValue(splashScreen.opacityProperty(), 1);
+                  // Create the initial and final key frames
+                  KeyValue initKeyValue = new KeyValue(pane.opacityProperty(), 1);
                   KeyFrame initFrame = new KeyFrame(Duration.ZERO, initKeyValue);
-                  KeyValue endKeyValue = new KeyValue(splashScreen.opacityProperty(), 0);
-                  KeyFrame endFrame = new KeyFrame(Duration.millis(500), endKeyValue);
+                  KeyValue endKeyValue = new KeyValue(pane.opacityProperty(), 0);
+                  KeyFrame endFrame = new KeyFrame(Duration.millis(visibilityChangeDuration), endKeyValue);
                   // Create a Timeline object
                   Timeline timeline = new Timeline(initFrame, endFrame);
-                  // Let the animation run forever
-                  //timeline.setCycleCount(Timeline.INDEFINITE);
                   // Start the animation
                   timeline.play();
                   timeline.setOnFinished( j -> {
@@ -62,7 +63,6 @@ public class WindowController implements Initializable {
                   });
 
             });
-            pause.play();
-
+            return pause;
       }
 }
