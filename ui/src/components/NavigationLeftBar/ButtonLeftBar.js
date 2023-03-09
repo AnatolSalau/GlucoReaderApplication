@@ -1,5 +1,4 @@
-import { MdHomeFilled }
-      from 'react-icons/md' ;
+
 import style from './ButtonLeftBar.module.css'
 
 function ButtonLeftBar({children}) {

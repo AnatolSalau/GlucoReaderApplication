@@ -1,5 +1,4 @@
 .main {
       display: flex;
-      background-color: green;
       flex-grow: 10;
 }

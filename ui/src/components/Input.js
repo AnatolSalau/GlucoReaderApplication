@@ -1,10 +1,14 @@
+import { FaUserPlus } from 'react-icons/fa' ;
 import style from './Input.module.css'
 
-function Input({textInFront}) {
+function Input({textInFront, placeholderText, children}) {
       return (
             <div className={style.input}>
                   {textInFront}
-                  <input/>
+                  <div className={style.inputWrapper}>
+                        <input placeholder={placeholderText} />
+                        {children}
+                  </div>
             </div>
       );
 }

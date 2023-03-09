@@ -1,6 +1,5 @@
 .allPatients {
       background-color: #EAEAEA;
-      border: 5px solid black;
       display: flex;
       flex-direction: column;
       gap: 40px;
