@@ -17,40 +17,26 @@ function AllPatientsTable() {
 
       return (
             <div className={style.table}>
-                  <div className={style.tableHeader}>
-                        {
-                              Object.values(columheaders).map((value) => {
-                                    return(
-                                          <div
-                                                key={value}
-                                          >
-                                                {value}
-                                          </div>
-                                    );
-                              })
-                        }
-                  </div>
                   {
-                        allPatients.map((patient) => {
-                              return (
-                                    <div
-                                          className={style.tableRow}
-                                          key={patient.id}
-                                    >
-                                          {
-                                                Object.values(patient).map((value, index) => {
+                       Object.entries(columheaders).map(([columnHeaderKey, columnHeaderValue]) => {
+                             return (
+                                   <div className={style.column}>
+                                         {/*{objValue}*/}
+                                         <div className={style.columnHeader}>{columnHeaderValue}</div>
+                                         {
+                                               allPatients.map((patient) => {
                                                       return (
                                                             <div
-                                                                  key={index}
+                                                                  className={style.columnRow}
                                                             >
-                                                                  {value}
+                                                                  {patient.id}
                                                             </div>
                                                       )
-                                                })
-                                          }
-                                    </div>
-                              )
-                        })
+                                               })
+                                         }
+                                   </div>
+                             )
+                       })
                   }
             </div>
       )
