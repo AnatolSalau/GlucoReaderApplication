@@ -36,7 +36,6 @@ public class WindowController implements Initializable {
 
       @Override
       public void initialize(URL location, ResourceBundle resources) {
-            webView.setBlendMode(BlendMode.DARKEN);
             webView.setContextMenuEnabled(false);
             engine = webView.getEngine();
             engine.setJavaScriptEnabled(true);

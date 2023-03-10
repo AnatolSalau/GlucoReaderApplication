@@ -10,12 +10,22 @@
       url("../../fonts/MyriadPro-Regular.ttf") format("truetype");
 }
 
+
+
 .table {
       display: flex;
       justify-content: flex-start;
       flex: 1;
       background-color: #F9F9FC;
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      position: relative;  /* <------------------------- required */
+}
+
+.wrapper {
+      display: flex;
+      position: absolute;  /* <------------------------- required */
+      left: 0; top: 0; right: 0; bottom: 0;  /* <------- required */
+      overflow-y: scroll;  /* <--------------------------- required */
 }
 
 .column{

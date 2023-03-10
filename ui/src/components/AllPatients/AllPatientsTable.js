@@ -17,36 +17,41 @@ function AllPatientsTable() {
       );
 
       return (
-            <div className={style.table}>
-                  {
-                       Object.entries(columheaders).map(([columnHeaderKey, columnHeaderValue], index) => {
-                             return (
-                                   <div
-                                         className={style.column}
-                                         key={index}
-                                   >
-                                         <div
-                                               className={style.columnHeader}
-                                         >
-                                               {columnHeaderValue}
-                                         </div>
-                                         {
-                                               allPatients.map((patient, index) => {
-                                                      return (
+                  <div className={style.table}>
+                        <div
+                              className={style.wrapper}
+                        >
+                                    {
+                                          Object.entries(columheaders).map(([columnHeaderKey, columnHeaderValue], index) => {
+                                                return (
+                                                      <div
+                                                            className={style.column}
+                                                            key={index}
+                                                      >
                                                             <div
-                                                                  className={style.columnRow}
-                                                                  key={patient.id}
+                                                                  className={style.columnHeader}
                                                             >
-                                                                  {patient[columnHeaderKey]}
+                                                                  {columnHeaderValue}
                                                             </div>
-                                                      )
-                                               })
-                                         }
-                                   </div>
-                             )
-                       })
-                  }
-            </div>
+                                                            {
+                                                                  allPatients.map((patient, index) => {
+                                                                        return (
+                                                                              <div
+                                                                                    className={style.columnRow}
+                                                                                    key={patient.id}
+                                                                              >
+                                                                                    {patient[columnHeaderKey]}
+                                                                              </div>
+                                                                        )
+                                                                  })
+                                                            }
+                                                      </div>
+                                                )
+                                          })
+                                    }
+                        </div>
+                  </div>
+
       )
 }
 
