@@ -6,6 +6,7 @@ function AllPatientsTable() {
 
       const [columheaders, setColumheaders] = useState(
             {
+                  id: "№",
                   name: "ФИО",
                   age: "Возраст",
                   data: "Дата Рождения",
@@ -18,18 +19,25 @@ function AllPatientsTable() {
       return (
             <div className={style.table}>
                   {
-                       Object.entries(columheaders).map(([columnHeaderKey, columnHeaderValue]) => {
+                       Object.entries(columheaders).map(([columnHeaderKey, columnHeaderValue], index) => {
                              return (
-                                   <div className={style.column}>
-                                         {/*{objValue}*/}
-                                         <div className={style.columnHeader}>{columnHeaderValue}</div>
+                                   <div
+                                         className={style.column}
+                                         key={index}
+                                   >
+                                         <div
+                                               className={style.columnHeader}
+                                         >
+                                               {columnHeaderValue}
+                                         </div>
                                          {
-                                               allPatients.map((patient) => {
+                                               allPatients.map((patient, index) => {
                                                       return (
                                                             <div
                                                                   className={style.columnRow}
+                                                                  key={patient.id}
                                                             >
-                                                                  {patient.id}
+                                                                  {patient[columnHeaderKey]}
                                                             </div>
                                                       )
                                                })
