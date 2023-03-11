@@ -12,46 +12,25 @@ function AllPatientsTable() {
                   data: "Дата Рождения",
                   place: "Адрес",
                   phone: "Tелефон",
-                  number: "Номер карты"
+                  field1: "Номер карты",
+                  field2: "Номер карты",
+                  field3: "Номер карты",
+                  field4: "Номер карты",
+                  field5: "Номер карты",
+                  field6: "Номер карты",
+                  field7: "Номер карты",
+                  field8: "Номер карты",
+                  field9: "Номер карты",
+                  field10: "Номер карты"
             }
       );
-/*
       return (
             <div className={style.table}>
-                  <div className={style.wrapper}>
-                        {
-                              Object.entries(columheaders).map(([columnHeaderKey, columnHeaderValue], index) => {
-                                    return (
-                                          <div>{columnHeaderValue}</div>
-                                    )
-                              })
-                        }
-                        {
-                              allPatients.map((patient, index) => {
-                                    return (
-                                          <div className="table-row">
-                                                {
-                                                      Object.entries(columheaders).map(([columnHeaderKey, columnHeaderValue], index) => {
-                                                            return (
-                                                                  <div>{patient[columnHeaderKey]}</div>
-                                                            )
-                                                      })
-                                                }
+                  <div
+                        className={style.wrapper}
 
-                                          </div>
-                                    )
-                              })
-                        }
-                  </div>
-            </div>
-
-      )*/
-
-            return (
-                  <div className={style.table}>
-                        <div
-                              className={style.wrapper}
-                        >
+                  >
+                        <div className={style.wrapperTable} >
                               {
                                     Object.entries(columheaders).map(([columnHeaderKey, columnHeaderValue], index) => {
                                           return (
@@ -76,9 +55,11 @@ function AllPatientsTable() {
                                     })
                               }
                         </div>
-                  </div>
 
-            )
+                  </div>
+            </div>
+
+      )
 }
 
 export default AllPatientsTable;
