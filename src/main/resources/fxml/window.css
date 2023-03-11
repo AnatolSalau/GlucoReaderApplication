@@ -15,8 +15,8 @@
 
 #root {
       -fx-background-color: white;
-      -fx-min-width: 1366;
-      -fx-min-height: 768;
+      -fx-min-width: 1115;
+      -fx-min-height: 625;
 }
 
 #webView {
