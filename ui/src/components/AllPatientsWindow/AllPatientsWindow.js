@@ -2,7 +2,7 @@ import style from './AllPatients.module.css'
 import AllPatientsTable from "./AllPatientsTable";
 import AllPatientsNavBar from "./AllPatientsNavBar";
 
-function AllPatients() {
+function AllPatientsWindow() {
       return (
             <div className={style.allPatients}>
                   <AllPatientsNavBar />
@@ -11,4 +11,4 @@ function AllPatients() {
       );
 }
 
-export default AllPatients;
+export default AllPatientsWindow;
