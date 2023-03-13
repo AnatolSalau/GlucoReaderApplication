@@ -28,7 +28,6 @@ function AllPatientsTable() {
             <div className={style.table}>
                   <div
                         className={style.wrapper}
-
                   >
                         <div className={style.wrapperTable} >
                               {
