@@ -19,7 +19,7 @@
       position: relative; /* <------------------------- required */
 }
 
-.wrapper {
+.scrollableWrapper {
       position: absolute; /* <------------------------- required */
       left: 0;
       top: 0;
@@ -33,40 +33,4 @@
       border-collapse:collapse;
       width:100%;
 }
-.column {
-      display:table-cell;
-      height:10px;
-}
 
-.columnClicked {
-
-}
-
-.columnHeader {
-      top: 0;
-      position: sticky;
-      padding: 0 10px 0 10px;
-      display: flex;
-      align-items: center;
-      white-space: nowrap;
-      background-color: #A7EEE1;
-      min-height: 48px;
-      font-family: 'MyriadPro-Semibold', sans-serif;
-      font-size: 12px;
-}
-
-.columnHeaderClicked {
-
-}
-
-.columnRow {
-      display: flex;
-      align-items: center;
-      min-height: 36px;
-      padding: 0 10px 0 10px;
-      font-family: 'MyriadPro-Regular', sans-serif;
-      font-size: 12px;
-      border-bottom: 1px solid #F0EFF6;
-      border-right: 1px solid #F0EFF6;
-      white-space: nowrap;
-}

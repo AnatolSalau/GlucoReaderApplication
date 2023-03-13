@@ -1,5 +1,4 @@
 import style from './AllPatientsTable.module.css'
-import allPatients from "../../data/allPatients.json";
 import {useState} from "react";
 import AllPatientsTableColumn from "./AllPatientsTableColumn";
 
@@ -29,7 +28,7 @@ function AllPatientsTable() {
       return (
             <div className={style.table}>
                   <div
-                        className={style.wrapper}
+                        className={style.scrollableWrapper}
 
                   >
                         <div className={style.wrapperTable} >
