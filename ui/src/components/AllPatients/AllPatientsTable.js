@@ -24,6 +24,15 @@ function AllPatientsTable() {
                   field10: "Номер карты"
             }
       );
+
+      const changeStyle = (defaultStyle, newStyle) => {
+
+      };
+
+      const columnHeaderClickHandler = (e) => {
+            console.log(e)
+      };
+
       return (
             <div className={style.table}>
                   <div
@@ -35,7 +44,10 @@ function AllPatientsTable() {
                                     Object.entries(columheaders).map(([columnHeaderKey, columnHeaderValue], index) => {
                                           return (
                                                 <div className={style.column} key={index}>
-                                                      <div className={style.columnHeader}>
+                                                      <div
+                                                            className={style.columnHeader}
+                                                            onClick={columnHeaderClickHandler}
+                                                      >
                                                             {columnHeaderValue}
                                                       </div>
                                                       {
@@ -43,7 +55,7 @@ function AllPatientsTable() {
                                                                   return (
                                                                         <div
                                                                               className={style.columnRow}
-                                                                              key={patient.id}
+                                                                              key={index}
                                                                         >
                                                                               {patient[columnHeaderKey]}
                                                                         </div>
