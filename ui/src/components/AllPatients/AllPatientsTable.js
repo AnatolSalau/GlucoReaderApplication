@@ -25,14 +25,6 @@ function AllPatientsTable() {
             }
       );
 
-      const changeStyle = (defaultStyle, newStyle) => {
-
-      };
-
-      const columnHeaderClickHandler = (e) => {
-            console.log(e)
-      };
-
       return (
             <div className={style.table}>
                   <div
@@ -46,7 +38,6 @@ function AllPatientsTable() {
                                                 <div className={style.column} key={index}>
                                                       <div
                                                             className={style.columnHeader}
-                                                            onClick={columnHeaderClickHandler}
                                                       >
                                                             {columnHeaderValue}
                                                       </div>
