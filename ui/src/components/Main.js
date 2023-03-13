@@ -1,5 +1,5 @@
 import style from './Main.module.css'
-import AllPatients from "./AllPatients/AllPatients";
+import AllPatients from "./AllPatientsWindow/AllPatients";
 import NavigationLefBar from "./NavigationLeftBar/NavigationLefBar";
 
 function Main() {
