@@ -1,6 +1,7 @@
 import style from './AllPatientsTable.module.css'
 import allPatients from "../../data/allPatients.json";
 import {useState} from "react";
+import AllPatientsTableColumn from "./AllPatientsTableColumn";
 
 function AllPatientsTable() {
 
@@ -35,25 +36,11 @@ function AllPatientsTable() {
                               {
                                     Object.entries(columheaders).map(([columnHeaderKey, columnHeaderValue], index) => {
                                           return (
-                                                <div className={style.column} key={index}>
-                                                      <div
-                                                            className={style.columnHeader}
-                                                      >
-                                                            {columnHeaderValue}
-                                                      </div>
-                                                      {
-                                                            allPatients.map((patient, index) => {
-                                                                  return (
-                                                                        <div
-                                                                              className={style.columnRow}
-                                                                              key={index}
-                                                                        >
-                                                                              {patient[columnHeaderKey]}
-                                                                        </div>
-                                                                  )
-                                                            })
-                                                      }
-                                                </div>
+                                                <AllPatientsTableColumn
+                                                      key={index}
+                                                      columnHeaderKey={columnHeaderKey}
+                                                      columnHeaderValue={columnHeaderValue}
+                                                />
                                           )
                                     })
                               }
