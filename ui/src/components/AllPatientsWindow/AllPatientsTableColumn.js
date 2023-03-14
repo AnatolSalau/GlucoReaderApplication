@@ -1,20 +1,18 @@
-import style from "./AllPatientsTableColumn.module.css";
-import allPatients from "../../data/allPatients.json";
 import {useState} from "react";
 
-function AllPatientsTableColumn({columnHeaderKey, columnHeaderValue}) {
+import style from "./AllPatientsTableColumn.module.css";
+import allPatients from "../../data/allPatients.json";
 
+function AllPatientsTableColumn({columnIndex, columnHeaderKey, columnHeaderValue}) {
+      console.log("Render column with index : " + columnIndex);
       let [isActive, setIsActive] = useState(false);
 
-      const clickHandler = (event) => {
-            setIsActive(true);
+      const toggleActive = (event) => {
+            setIsActive(!isActive);
       }
 
       const changeStyleColumn = (isActive) => {
-            if (isActive === true) {
-                  return style.columnActive;
-            }
-            return style.column;
+            return isActive ? style.columnActive : style.column;
       }
 
       const changeStyleHeader = (isActive) => {
@@ -28,7 +26,7 @@ function AllPatientsTableColumn({columnHeaderKey, columnHeaderValue}) {
             <div className={changeStyleColumn(isActive)}>
                   <div
                         className={changeStyleHeader(isActive)}
-                        onClick={clickHandler}
+                        onClick={toggleActive}
                   >
                         {columnHeaderValue}
                   </div>

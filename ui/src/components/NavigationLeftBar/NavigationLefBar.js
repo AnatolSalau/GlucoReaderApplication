@@ -15,9 +15,21 @@ import ButtonLeftBar from "./ButtonLeftBar";
 function NavigationLefBar() {
       return (
             <div className={style.navigationLeftbar}>
-                  <ButtonLeftBar><MdHomeFilled/></ButtonLeftBar>
-                  <ButtonLeftBar><FiUser/></ButtonLeftBar>
-                  <ButtonLeftBar><BiLineChart/></ButtonLeftBar>
+                  <ButtonLeftBar
+                        windowComponentName = "AllPatientsWindow"
+                  >
+                        <MdHomeFilled/>
+                  </ButtonLeftBar>
+                  <ButtonLeftBar
+                        windowComponentName = "SelectedPatientsWindow"
+                  >
+                        <FiUser/>
+                  </ButtonLeftBar>
+                  <ButtonLeftBar
+                        windowComponentName = "SearchPatientName"
+                  >
+                        <BiLineChart/>
+                  </ButtonLeftBar>
                   <ButtonLeftBar><FiPrinter/></ButtonLeftBar>
                   <ButtonLeftBar><FiArchive/></ButtonLeftBar>
             </div>

@@ -1,5 +1,6 @@
-import style from './AllPatientsTable.module.css'
 import {useState} from "react";
+
+import style from './AllPatientsTable.module.css'
 import AllPatientsTableColumn from "./AllPatientsTableColumn";
 
 function AllPatientsTable() {
@@ -37,6 +38,7 @@ function AllPatientsTable() {
                                           return (
                                                 <AllPatientsTableColumn
                                                       key={index}
+                                                      columnIndex={index}
                                                       columnHeaderKey={columnHeaderKey}
                                                       columnHeaderValue={columnHeaderValue}
                                                 />
