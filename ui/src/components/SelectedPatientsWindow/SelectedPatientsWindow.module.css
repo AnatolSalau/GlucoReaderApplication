@@ -2,7 +2,7 @@
       background-color: #EAEAEA;
       display: flex;
       flex-direction: column;
-      gap: 40px;
-      padding: 50px 60px 50px 60px;
+      gap: 6px;
+      padding: 12px 36px 33px 36px;
       flex-grow: 1;
 }

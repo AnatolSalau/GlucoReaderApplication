@@ -1,20 +1,15 @@
 import style from './TabsBar.module.css'
 
+import Tab from './Tab'
+
 function TabsBar() {
       return (
             <div
                   className={style.tabsBar}
             >
-                  <button
-                        className={style.tab}
-                  >
-                        User one
-                  </button>
-                  <button
-                        className={style.tab}
-                  >
-                        User two
-                  </button>
+                  <Tab>
+
+                  </Tab>
             </div>
       );
 }
