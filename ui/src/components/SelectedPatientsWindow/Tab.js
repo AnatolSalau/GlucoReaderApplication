@@ -1,11 +1,11 @@
 import style from './Tab.module.css'
 
-function Tab() {
+function Tab({children}) {
       return (
             <div
                   className={style.tab}
             >
-
+                  {children}
             </div>
       )
 }

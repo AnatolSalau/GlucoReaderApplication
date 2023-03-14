@@ -4,24 +4,25 @@ import { FiHome, FiUser, FiFolder, FiPrinter, FiArchive }
       from 'react-icons/fi' ;
 import { BiLineChart }
       from 'react-icons/bi' ;
-
-
-
-
 import style from './NavigationLeftBar.module.css'
 
 import ButtonLeftBar from "./ButtonLeftBar";
 
-function NavigationLefBar() {
+function NavigationLefBar({switchWindowHandler}) {
+
       return (
-            <div className={style.navigationLeftbar}>
+            <div
+                  className={style.navigationLeftbar}
+            >
                   <ButtonLeftBar
                         windowComponentName = "AllPatientsWindow"
+                        switchWindowHandler={switchWindowHandler}
                   >
                         <MdHomeFilled/>
                   </ButtonLeftBar>
                   <ButtonLeftBar
                         windowComponentName = "SelectedPatientsWindow"
+                        switchWindowHandler={switchWindowHandler}
                   >
                         <FiUser/>
                   </ButtonLeftBar>
