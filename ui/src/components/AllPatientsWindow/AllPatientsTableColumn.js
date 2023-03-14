@@ -4,7 +4,6 @@ import style from "./AllPatientsTableColumn.module.css";
 import allPatients from "../../data/allPatients.json";
 
 function AllPatientsTableColumn({columnIndex, columnHeaderKey, columnHeaderValue}) {
-      console.log("Render column with index : " + columnIndex);
       let [isActive, setIsActive] = useState(false);
 
       const toggleActive = (event) => {

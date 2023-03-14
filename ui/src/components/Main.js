@@ -6,7 +6,7 @@ import {useEffect, useState} from "react";
 
 function Main() {
 
-      let [activeWindowName, setActiveWindowName] = useState('');
+      let [activeWindowName, setActiveWindowName] = useState('AllPatientsWindow');
       console.log("Render Main")
 
       const switchWindowHandler = (activeWindowName) => {
@@ -25,6 +25,7 @@ function Main() {
             <div className={style.main}>
                   <NavigationLefBar
                         switchWindowHandler={switchWindowHandler}
+                        activeButtonName={activeWindowName}
                   />
                   {
                         switchWindowRender(activeWindowName)

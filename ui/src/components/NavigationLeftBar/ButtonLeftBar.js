@@ -1,13 +1,24 @@
-
 import style from './ButtonLeftBar.module.css'
-import {useState} from "react";
 
-function ButtonLeftBar({children, switchWindowHandler, windowComponentName}) {
+function ButtonLeftBar({
+                             children,
+                             switchWindowHandler,
+                             windowComponentName,
+                             activeButtonName
+})
+{
+      const setStyleByActiveButtonName = () => {
+            if (windowComponentName === activeButtonName) {
+                  return style.activeButton
+            } else {
+                  return style.button
+            }
+      }
 
       return (
             <button
                   onClick={() => {switchWindowHandler(windowComponentName)}}
-                  className={style.button}
+                  className={setStyleByActiveButtonName()}
             >
                   {children}
             </button>
