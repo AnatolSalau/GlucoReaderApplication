@@ -1,8 +1,12 @@
+import {useEffect, useState} from "react";
 import style from './Main.module.css'
+
 import AllPatientsWindow from "./AllPatientsWindow/AllPatientsWindow";
 import NavigationLefBar from "./NavigationLeftBar/NavigationLefBar";
 import SelectedPatientsWindow from "./SelectedPatientsWindow/SelectedPatientsWindow";
-import {useEffect, useState} from "react";
+import PatientResultWindow from "./PatientResultWindow/PatientResultWindow";
+
+
 
 function Main() {
 
@@ -14,9 +18,11 @@ function Main() {
       }
       
       const switchWindowRender = (activeWindowName) => {
+            console.log('switchWindowRender function :' + activeWindowName)
             switch (activeWindowName) {
                   case 'AllPatientsWindow' : return <AllPatientsWindow />
                   case 'SelectedPatientsWindow' : return <SelectedPatientsWindow />
+                  case 'PatientResultWindow' : return <PatientResultWindow />
                   default : return <AllPatientsWindow />
             }
       }

@@ -1,4 +1,4 @@
-import style from './AllPatients.module.css'
+import style from './AllPatientsWindow.module.css'
 import AllPatientsTable from "./AllPatientsTable";
 import AllPatientsNavBar from "./AllPatientsNavBar";
 

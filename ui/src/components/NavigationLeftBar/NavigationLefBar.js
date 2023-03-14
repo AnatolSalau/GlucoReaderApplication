@@ -30,28 +30,28 @@ function NavigationLefBar({switchWindowHandler, activeButtonName}) {
                         <FiUser/>
                   </ButtonLeftBar>
                   <ButtonLeftBar
-                        windowComponentName = "PatientResults"
+                        windowComponentName = "PatientResultsWindow"
                         switchWindowHandler={switchWindowHandler}
                         activeButtonName={activeButtonName}
                   >
                         <HiFolder />
                   </ButtonLeftBar>
                   <ButtonLeftBar
-                        windowComponentName = "Charts"
+                        windowComponentName = "ChartsWindow"
                         switchWindowHandler={switchWindowHandler}
                         activeButtonName={activeButtonName}
                   >
                         <BiLineChart/>
                   </ButtonLeftBar>
                   <ButtonLeftBar
-                        windowComponentName = "Print"
+                        windowComponentName = "PrintWindow"
                         switchWindowHandler={switchWindowHandler}
                         activeButtonName={activeButtonName}
                   >
                         <FiPrinter/>
                   </ButtonLeftBar>
                   <ButtonLeftBar
-                        windowComponentName = "Settings"
+                        windowComponentName = "SettingsWindows"
                         switchWindowHandler={switchWindowHandler}
                         activeButtonName={activeButtonName}
                   >
