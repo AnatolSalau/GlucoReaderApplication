@@ -1,0 +1,121 @@
+@font-face {
+      font-family: "MyriadPro-Semibold-Italic";   /*Can be any text*/
+      src: local("MyriadPro-Semibold-Italic"),
+      url("../../fonts/MyriadPro-Semibold-Italic.ttf") format("truetype");
+}
+
+.patientCard {
+      background: #D9D9D9;
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 35px 40px 35px;
+}
+
+.cardContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1;
+      height: 100%;
+}
+
+.firstRow {
+      width: 100%;
+      flex: 1;
+      background-color: royalblue;
+      border: solid 1px red;
+      display: flex;
+      align-items: flex-end;
+      gap: 40px;
+}
+
+.firstRowInputs {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: 150px;
+      background-color: green;
+}
+
+.firstRowAgeGender {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 10px;
+      flex:1;
+      background-color: green;
+}
+
+.middleRow {
+      width: 100%;
+      flex: 1;
+      background-color: royalblue;
+      border: solid 1px red;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      font-family: 'MyriadPro-Semibold-Italic', sans-serif;
+      font-size: 16px;
+}
+
+.innerRowStart {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: coral;
+      gap: 17px;
+      height: 100%;
+}
+
+.innerRowBetween {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: coral;
+      gap: 17px;
+      height: 100%;
+      border: solid 1px black;
+}
+.innerRowEnd {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: dodgerblue;
+      gap: 17px;
+      height: 100%;
+}
+
+.lastRow {
+      width: 100%;
+      flex: 1;
+      background-color: lightyellow;
+      border: solid 1px red;
+      display: flex;
+      flex-direction: column;
+}
+.patientCardButtons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 66px;
+      height: 39px ;
+}
+.photo {
+      background-color: yellow;
+      width: 130px;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.photo svg {
+      font-size: 60px;
+}

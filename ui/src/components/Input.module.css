@@ -1,0 +1,63 @@
+@font-face {
+      font-family: "MyriadPro-Semibold-Italic";   /*Can be any text*/
+      src: local("MyriadPro-Semibold-Italic"),
+      url("../fonts/MyriadPro-Semibold-Italic.ttf") format("truetype");
+}
+
+@font-face {
+      font-family: "MyriadPro-Regular";   /*Can be any text*/
+      src: local("MyriadPro-Regular"),
+      url("../fonts/MyriadPro-Regular.ttf") format("truetype");
+}
+
+.input {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 39px;
+      gap: 20px;
+      font-family: 'MyriadPro-Semibold-Italic', sans-serif;
+      font-size: 16px;
+      color: black;
+      white-space: nowrap;
+}
+.input input{
+      font-family: 'MyriadPro-Regular', sans-serif;
+      height: 100%;
+      width: 100%;
+      outline: none;
+      background: #FFFFFF;
+      border: 1px solid #A1A2A4;
+      border-radius: 4px;
+      font-size: 16px;
+      padding-left: 20px;
+}
+
+.inputWrapper {
+      height: 100%;
+      position:relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+}
+/*.inputWrapper svg {
+      color: #484964;
+      position:absolute;
+      right:10px;
+      cursor: pointer;
+}*/
+
+.svgWrapper {
+      color: #484964;
+      position:absolute;
+      right:10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      min-width: 18px;
+}
+
+.svgWrapper svg:hover {
+      font-size: 18px;
+}
+

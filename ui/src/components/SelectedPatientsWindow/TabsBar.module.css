@@ -1,0 +1,18 @@
+.tabsBar {
+      background-color: #EAEAEA;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 36px;
+      gap: 12px;
+}
+
+.tabsWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100%;
+      width: 100%;
+      gap: 12px;
+}
+

@@ -1,0 +1,53 @@
+.column {
+      display:table-cell;
+      height:10px;
+}
+
+.columnActive {
+      display:table-cell;
+      height:10px;
+      background-color: rgba(167, 238, 225, 0.3);
+}
+
+.columnHeader {
+      top: 0;
+      position: sticky;
+      padding: 0 10px 0 10px;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      background-color: #A7EEE1;
+      min-height: 48px;
+      font-family: 'MyriadPro-Semibold', sans-serif;
+      font-size: 12px;
+      cursor: pointer;
+}
+
+.columnHeaderActive {
+      top: 0;
+      position: sticky;
+      padding: 0 10px 0 10px;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      background-color: #A7EEE1;
+      min-height: 48px;
+      font-family: 'MyriadPro-Semibold', sans-serif;
+      font-size: 12px;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      z-index: 100;
+      cursor: pointer;
+}
+
+
+.columnRow {
+      display: flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 10px 0 10px;
+      font-family: 'MyriadPro-Regular', sans-serif;
+      font-size: 12px;
+      border-bottom: 1px solid #F0EFF6;
+      border-right: 1px solid #F0EFF6;
+      white-space: nowrap;
+}
