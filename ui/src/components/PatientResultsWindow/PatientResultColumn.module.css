@@ -79,8 +79,6 @@
       z-index: 100;
       cursor: pointer;
 }
-
-
 .columnRow {
       display: flex;
       align-items: center;
