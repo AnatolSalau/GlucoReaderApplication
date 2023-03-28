@@ -27,8 +27,6 @@
 .firstRow {
       width: 100%;
       flex: 1;
-      background-color: royalblue;
-      border: solid 1px red;
       display: flex;
       align-items: flex-end;
       gap: 40px;
@@ -40,7 +38,6 @@
       justify-content: space-between;
       align-items: flex-end;
       height: 150px;
-      background-color: green;
 }
 
 .firstRowAgeGender {
@@ -50,14 +47,11 @@
       align-items: flex-end;
       gap: 10px;
       flex:1;
-      background-color: green;
 }
 
 .middleRow {
       width: 100%;
       flex: 1;
-      background-color: royalblue;
-      border: solid 1px red;
       display: flex;
       justify-content: space-between;
       flex-direction: column;
@@ -69,7 +63,6 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      background-color: coral;
       gap: 17px;
       height: 100%;
 }
@@ -78,16 +71,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: coral;
       gap: 17px;
       height: 100%;
-      border: solid 1px black;
 }
 .innerRowEnd {
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      background-color: dodgerblue;
       gap: 17px;
       height: 100%;
 }
@@ -95,8 +85,6 @@
 .lastRow {
       width: 100%;
       flex: 1;
-      background-color: lightyellow;
-      border: solid 1px red;
       display: flex;
       flex-direction: column;
 }
@@ -108,7 +96,7 @@
       height: 39px ;
 }
 .photo {
-      background-color: yellow;
+      background-color: #F5F5F5;
       width: 130px;
       height: 150px;
       display: flex;
@@ -118,4 +106,5 @@
 
 .photo svg {
       font-size: 60px;
+      color: #C8C8C8;
 }
