@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "./static/css/main.94ca4076.css",
-    "main.js": "./static/js/main.3948d27f.js",
+    "main.css": "./static/css/main.b8f191b8.css",
+    "main.js": "./static/js/main.f831e037.js",
     "static/media/MyriadPro-Semibold-Italic.ttf": "./static/media/MyriadPro-Semibold-Italic.3bba058ed7df29f537ce.ttf",
     "static/media/MyriadPro-Regular.ttf": "./static/media/MyriadPro-Regular.36cbf678ae00bd8b2c6d.ttf",
     "static/media/MyriadPro-Semibold.ttf": "./static/media/MyriadPro-Semibold.e5e2d40aafde9268f427.ttf",
     "index.html": "./index.html",
-    "main.94ca4076.css.map": "./static/css/main.94ca4076.css.map",
-    "main.3948d27f.js.map": "./static/js/main.3948d27f.js.map"
+    "main.b8f191b8.css.map": "./static/css/main.b8f191b8.css.map",
+    "main.f831e037.js.map": "./static/js/main.f831e037.js.map"
   },
   "entrypoints": [
-    "static/css/main.94ca4076.css",
-    "static/js/main.3948d27f.js"
+    "static/css/main.b8f191b8.css",
+    "static/js/main.f831e037.js"
   ]
 }

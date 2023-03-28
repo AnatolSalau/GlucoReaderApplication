@@ -13,7 +13,7 @@
 .input {
       display: flex;
       justify-content: flex-start;
-      align-items: center;
+      align-items: baseline;
       height: 39px;
       gap: 20px;
       font-family: 'MyriadPro-Semibold-Italic', sans-serif;
@@ -23,7 +23,8 @@
 }
 .input input{
       font-family: 'MyriadPro-Regular', sans-serif;
-      height: 100%;
+      padding-top: 11px;
+      padding-bottom: 11px;
       width: 100%;
       outline: none;
       background: #FFFFFF;
@@ -53,7 +54,7 @@
       right:10px;
       cursor: pointer;
       display: flex;
-      align-items: center;
+      align-items: baseline;
       justify-content: center;
       min-width: 18px;
 }
