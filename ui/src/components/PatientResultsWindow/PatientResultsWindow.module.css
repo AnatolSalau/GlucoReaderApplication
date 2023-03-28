@@ -1,4 +1,29 @@
 .patientsResult {
-      background: lightgoldenrodyellow;
+      background-color: #EAEAEA;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
+      padding: 50px 60px 50px 60px;
+}
+.wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      flex: 1;
+      height: 100%;
+      background-color: lightgreen;
+}
+.navBar {
+      width: 100%;
+      background-color: royalblue;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 45px;
+}
+
+.patientsResultTable {
+
 }
