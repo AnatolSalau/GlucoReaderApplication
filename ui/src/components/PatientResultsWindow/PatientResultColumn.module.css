@@ -82,12 +82,10 @@
 
 
 .columnRow {
-/*      color: #40B0A5;*/
       display: flex;
       align-items: center;
       min-height: 36px;
       padding: 0 10px 0 10px;
-/*      font-family: 'MyriadPro-Semibold', sans-serif;*/
       font-family: 'MyriadPro-Regular', sans-serif;;
       font-size: 14px;
       border-bottom: 1px solid #F0EFF6;
