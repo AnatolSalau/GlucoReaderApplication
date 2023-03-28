@@ -1,6 +1,7 @@
 import style from './PatientResultsWindow.module.css'
 import Input from "../Input";
 import {VscTriangleDown} from "react-icons/vsc";
+import PatientResultTable from "./PatientResultTable";
 
 function PatientResultsWindow() {
       return(
@@ -23,9 +24,7 @@ function PatientResultsWindow() {
                               >
                               </Input>
                         </div>
-                        <div className={style.patientsResultTable}>
-
-                        </div>
+                        <PatientResultTable />
                   </div>
             </div>
       )

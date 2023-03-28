@@ -1,0 +1,191 @@
+[
+      {
+            "id": 1,
+            "data": "1.01.2022",
+            "dataMeasurement": "1.01.2022",
+            "time": "15.23",
+            "measurement": "12",
+            "type": true,
+            "mark": true
+      },
+      {
+            "id": 2,
+            "data": "",
+            "dataMeasurement": "2.01.2022",
+            "time": "16.23",
+            "measurement": "5.3",
+            "type": false,
+            "mark": false
+      },
+      {
+            "id": 3,
+            "data": "",
+            "dataMeasurement": "3.01.2022",
+            "time": "17.23",
+            "measurement": "6.1",
+            "type": false,
+            "mark": false
+      },
+      {
+            "id": 4,
+            "data": "",
+            "dataMeasurement": "4.01.2022",
+            "time": "18.23",
+            "measurement": "3.2",
+            "type": false,
+            "mark": true
+      },
+      {
+            "id": 5,
+            "data": "1.02.2022",
+            "dataMeasurement": "1.02.2022",
+            "time": "15.23",
+            "measurement": "12",
+            "type": true,
+            "mark": true
+      },
+      {
+            "id": 6,
+            "data": "",
+            "dataMeasurement": "2.02.2022",
+            "time": "16.23",
+            "measurement": "5.3",
+            "type": false,
+            "mark": false
+      },
+      {
+            "id": 7,
+            "data": "",
+            "dataMeasurement": "3.02.2022",
+            "time": "17.23",
+            "measurement": "6.1",
+            "type": false,
+            "mark": false
+      },
+      {
+            "id": 8,
+            "data": "",
+            "dataMeasurement": "5.02.2022",
+            "time": "18.23",
+            "measurement": "3.2",
+            "type": false,
+            "mark": true
+      },
+      {
+            "id": 9,
+            "data": "1.03.2022",
+            "dataMeasurement": "1.03.2022",
+            "time": "15.23",
+            "measurement": "12",
+            "type": true,
+            "mark": true
+      },
+      {
+            "id": 10,
+            "data": "",
+            "dataMeasurement": "2.03.2022",
+            "time": "16.23",
+            "measurement": "5.3",
+            "type": false,
+            "mark": false
+      },
+      {
+            "id": 11,
+            "data": "",
+            "dataMeasurement": "3.03.2022",
+            "time": "17.23",
+            "measurement": "6.1",
+            "type": false,
+            "mark": false
+      },
+      {
+            "id": 12,
+            "data": "",
+            "dataMeasurement": "5.03.2022",
+            "time": "18.23",
+            "measurement": "3.2",
+            "type": false,
+            "mark": true
+      },
+      {
+            "id": 13,
+            "data": "",
+            "dataMeasurement": "6.03.2022",
+            "time": "18.23",
+            "measurement": "3.2",
+            "type": false,
+            "mark": true
+      },
+      {
+            "id": 14,
+            "data": "",
+            "dataMeasurement": "7.03.2022",
+            "time": "18.23",
+            "measurement": "3.2",
+            "type": false,
+            "mark": true
+      },
+      {
+            "id": 15,
+            "data": "",
+            "dataMeasurement": "8.03.2022",
+            "time": "18.23",
+            "measurement": "3.2",
+            "type": false,
+            "mark": true
+      },
+      {
+            "id": 16,
+            "data": "",
+            "dataMeasurement": "9.03.2022",
+            "time": "18.23",
+            "measurement": "3.2",
+            "type": false,
+            "mark": true
+      },
+      {
+            "id": 17,
+            "data": "",
+            "dataMeasurement": "10.03.2022",
+            "time": "18.23",
+            "measurement": "3.2",
+            "type": false,
+            "mark": true
+      },
+      {
+            "id": 18,
+            "data": "",
+            "dataMeasurement": "11.03.2022",
+            "time": "18.23",
+            "measurement": "3.2",
+            "type": false,
+            "mark": true
+      },
+      {
+            "id": 19,
+            "data": "",
+            "dataMeasurement": "12.03.2022",
+            "time": "18.23",
+            "measurement": "3.2",
+            "type": false,
+            "mark": true
+      },
+      {
+            "id": 20,
+            "data": "",
+            "dataMeasurement": "13.03.2022",
+            "time": "18.23",
+            "measurement": "3.2",
+            "type": false,
+            "mark": true
+      },
+      {
+            "id": 21,
+            "data": "",
+            "dataMeasurement": "14.03.2022",
+            "time": "18.23",
+            "measurement": "3.2",
+            "type": false,
+            "mark": true
+      }
+]
