@@ -5,7 +5,7 @@
             "dataMeasurement": "1.01.2022",
             "time": "15.23",
             "measurement": "12",
-            "type": true,
+            "type": null,
             "mark": true
       },
       {
@@ -32,7 +32,7 @@
             "dataMeasurement": "4.01.2022",
             "time": "18.23",
             "measurement": "3.2",
-            "type": false,
+            "type": null,
             "mark": true
       },
       {
@@ -113,7 +113,7 @@
             "dataMeasurement": "6.03.2022",
             "time": "18.23",
             "measurement": "3.2",
-            "type": false,
+            "type": null,
             "mark": true
       },
       {
@@ -122,7 +122,7 @@
             "dataMeasurement": "7.03.2022",
             "time": "18.23",
             "measurement": "3.2",
-            "type": false,
+            "type": true,
             "mark": true
       },
       {

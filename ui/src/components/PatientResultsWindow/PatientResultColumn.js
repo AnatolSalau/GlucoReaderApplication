@@ -38,6 +38,61 @@ function PatientResultColumn({columnIndex, columnHeaderKey, columnHeaderValue}) 
             return style.columnRow;
       }
 
+      const changeMarkTypeRow = (columnHeaderKey, rowValue) => {
+            if (columnHeaderKey === 'type') {
+                  if (rowValue === null) {
+                        return (
+                              <div className={style.columnRowMark}>
+                                    <div className={style.markOfType}>
+                                          <img
+                                                className={style.markOfType}
+                                                src={require('../../svg/empty.svg').default}
+                                          />
+                                    </div>
+                                    натощак
+                              </div>
+                        )
+                  }
+                  if (rowValue === true) {
+                        return (
+                              <div className={style.columnRowMark}>
+                                          <img
+                                                className={style.markOfType}
+                                                src={require('../../svg/after.svg').default}
+                                          />
+                                    после еды
+                              </div>
+                        )
+                  }
+                  if (rowValue === false) {
+                        return (
+                              <div className={style.columnRowMark}>
+                                          <img
+                                                className={style.checkMark}
+                                                src={require('../../svg/before.svg').default}
+                                          />
+                                    до еды
+                              </div>
+                        )
+                  }
+            }
+            return null;
+      }
+
+      const changeMarkRow = (columnHeaderKey, rowValue) => {
+            if (columnHeaderKey === 'mark') {
+                  if (rowValue === true) {
+                        return (
+                              <div className={style.columnRowMark}>
+                                          <img
+                                                className={style.checkMark}
+                                                src={require('../../svg/mark.svg').default}
+                                          />
+                              </div>
+                        )
+                  }
+            }
+      }
       return (
             <div className={changeStyleColumn(isActive)}>
                   <div
@@ -55,7 +110,6 @@ function PatientResultColumn({columnIndex, columnHeaderKey, columnHeaderValue}) 
                   {
                         allPatients.map((patient, index) => {
                               return (
-
                                     <div
                                           className={changeStyleMeasurementRow(
                                                 columnHeaderKey,
@@ -66,6 +120,12 @@ function PatientResultColumn({columnIndex, columnHeaderKey, columnHeaderValue}) 
                                                 console.log(patient);
                                           }}
                                     >
+                                          {
+                                                changeMarkTypeRow(columnHeaderKey, patient[columnHeaderKey])
+                                          }
+                                          {
+                                                changeMarkRow(columnHeaderKey, patient[columnHeaderKey])
+                                          }
                                           {patient[columnHeaderKey]}
                                     </div>
                               )
