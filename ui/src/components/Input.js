@@ -5,7 +5,10 @@ function Input({textInFront, placeholderText, children, inputWidth}) {
       return (
             <div style={{width: inputWidth}}>
                   <div className={style.input}>
-                        {textInFront}
+                        <div className={style.textInFrontWrapper}>
+                              {textInFront}
+                        </div>
+
                         <div className={style.inputWrapper}>
                               <input
                                     placeholder={placeholderText}

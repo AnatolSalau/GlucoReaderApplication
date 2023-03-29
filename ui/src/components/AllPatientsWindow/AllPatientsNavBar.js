@@ -5,12 +5,13 @@ import { VscTriangleDown } from 'react-icons/vsc'
 import style from './AllPatientsNavBar.module.css'
 import Input from "../Input";
 import Button from "../Button";
+import InputWithoutText from "../InputWithoutText";
 
 function AllPatientsNavBar() {
       return (
             <div className={style.allPatientsNavBar}>
                         <Input
-                              textInFront="Врач"
+                              textInFront="Врач:"
                               placeholderText="Фамилия Имя Отчество"
                               inputWidth={350}
                         >
@@ -19,12 +20,12 @@ function AllPatientsNavBar() {
                   <Button text="Добавить пациента">
                         <FaUserPlus />
                   </Button>
-                  <Input
+                  <InputWithoutText
                         placeholderText="Поиск..."
                         inputWidth={288}
                   >
                         <ImSearch />
-                  </Input>
+                  </InputWithoutText>
             </div>
       )
 }
