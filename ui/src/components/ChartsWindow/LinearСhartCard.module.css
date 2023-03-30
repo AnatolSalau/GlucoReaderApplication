@@ -1,9 +1,59 @@
 .linearChart {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
+      flex-direction: column;
       height: 100%;
       flex: 1;
       background-color: yellowgreen;
       border-radius: 4px;
+}
+.legend {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      background-color: #40B0A5;
+
+}
+
+.legendTitle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: red;
+      width: 100%;
+}
+
+.legendBody {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: lightblue;
+      width: 100%;
+}
+
+.legendBodyColumn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      flex: 1;
+      border: 1px solid black;
+}
+.legendBodyRow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+}
+
+.chartWrapper {
+      width: 100%;
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      background-color: lightgoldenrodyellow;
 }

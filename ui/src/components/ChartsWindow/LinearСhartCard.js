@@ -5,7 +5,52 @@ function LinearChartCard() {
             <div
                   className={style.linearChart}
             >
-                  Линейный график
+                  <div
+                        className={style.legend}
+                  >
+                        <div
+                              className={style.legendTitle}
+                        >
+                              График измерений
+                        </div>
+                        <div
+                              className={style.legendBody}
+                        >
+                              <div className={style.legendBodyColumn}>
+                                   <div className={style.legendBodyRow}>
+                                         1-1
+                                   </div>
+                                    <div className={style.legendBodyRow}>
+                                          1-2
+                                    </div>
+                                    <div className={style.legendBodyRow}>
+                                          1-3
+                                    </div>
+                                    <div className={style.legendBodyRow}>
+                                          1-4
+                                    </div>
+                              </div>
+                              <div className={style.legendBodyColumn}>
+                                    <div className={style.legendBodyRow}>
+                                          2-1
+                                    </div>
+                                    <div className={style.legendBodyRow}>
+                                          2-2
+                                    </div>
+                                    <div className={style.legendBodyRow}>
+                                          2-3
+                                    </div>
+                                    <div className={style.legendBodyRow}>
+                                          2-4
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+                  <div
+                        className={style.chartWrapper}
+                  >
+                        График
+                  </div>
             </div>
       )
 }
