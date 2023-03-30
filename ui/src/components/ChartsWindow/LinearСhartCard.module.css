@@ -1,0 +1,9 @@
+.linearChart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      flex: 1;
+      background-color: yellowgreen;
+      border-radius: 4px;
+}

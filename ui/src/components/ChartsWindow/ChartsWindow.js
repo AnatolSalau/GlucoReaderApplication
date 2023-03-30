@@ -1,3 +1,5 @@
+import {useState} from "react";
+
 import style from './ChartsWindow.module.css'
 import Input from "../Input";
 import {VscTriangleDown} from "react-icons/vsc";
@@ -5,8 +7,26 @@ import {MdOutlineCalendarToday} from "react-icons/md";
 
 import {FiCheck} from "react-icons/fi";
 import Button from "../Button";
+import Dropdown from "../Dropdown";
+import PieChartCard from "./PieСhartCard";
+import LinearChartCard from "./LinearСhartCard";
+
 
 function ChartsWindow() {
+      const dropDownItems = ['Линейный график', 'Круговая диаграмма'];
+      const [selectedItem, setSelectedItem] = useState(dropDownItems[0]);
+      
+      const switchChartCad = (selectedItem) => {
+            if (selectedItem === 'Линейный график') {
+                  return <LinearChartCard />;
+            }
+            else if (selectedItem === 'Круговая диаграмма') {
+                  return <PieChartCard />;
+            }
+            else {
+                  return null;
+            }
+      }
       return(
             <div
                   className={style.chartsWindow}
@@ -58,13 +78,20 @@ function ChartsWindow() {
                               <div
                                     className={style.navBarRow}
                               >
-                                    <Input
-                                          textInFront="Вид:"
-                                          placeholderText="Круговая диаграмма"
-                                          inputWidth={251}
-                                    >
-                                          <VscTriangleDown />
-                                    </Input>
+                                    <div className={style.dropDownWrapper}>
+                                          <div
+                                                className={style.dropDownWrapperText}
+                                          >
+                                                Вид:
+                                          </div>
+
+                                          <Dropdown
+                                                dropDownItems={dropDownItems}
+                                                selectedItem={selectedItem}
+                                                setSelectedItem = {setSelectedItem}
+                                          />
+                                    </div>
+
                                     <Input
                                           textInFront="Единица измерения:"
                                           placeholderText="ммоль/л"
@@ -100,7 +127,8 @@ function ChartsWindow() {
                         <div
                               className={style.chartCard}
                         >
-                              chartCard
+                                    {switchChartCad(selectedItem)}
+
                         </div>
                   </div>
             </div>

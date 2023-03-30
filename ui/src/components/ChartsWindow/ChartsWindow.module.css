@@ -1,3 +1,9 @@
+@font-face {
+      font-family: "MyriadPro-Semibold-Italic";   /*Can be any text*/
+      src: local("MyriadPro-Semibold-Italic"),
+      url("../../fonts/MyriadPro-Semibold-Italic.ttf") format("truetype");
+}
+
 .chartsWindow {
       background: #EAEAEA;
       width: 100%;
@@ -16,6 +22,17 @@
       width: 100%;
       border: 1px solid green;
 }
+
+.chartCard {
+      width: 100%;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid red;
+      padding-top: 30px;
+}
+
 .navBar {
       display: flex;
       justify-content: space-between;
@@ -43,9 +60,15 @@
       width: 100%;
 }
 
-.chartCard {
+
+.dropDownWrapper {
       display: flex;
-      flex: 1;
-      width: 100%;
-      border: 1px solid red;
+      align-items: center;
+      font-family: 'MyriadPro-Semibold-Italic', sans-serif;
+      font-size: 16px;
+      gap: 6px;
+}
+.dropDownWrapperText {
+      padding-top: 11px;
+      padding-bottom: 9px;
 }
