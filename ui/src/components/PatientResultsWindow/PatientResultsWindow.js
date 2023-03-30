@@ -20,7 +20,7 @@ function PatientResultsWindow() {
                               <Input
                                     textInFront="Возраст:"
                                     placeholderText="49"
-                                    inputWidth={165}
+                                    inputWidth={145}
                               >
                               </Input>
                         </div>
