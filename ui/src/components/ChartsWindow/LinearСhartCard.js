@@ -5,43 +5,69 @@ function LinearChartCard() {
             <div
                   className={style.linearChart}
             >
-                  <div
-                        className={style.legend}
-                  >
+                  <div className={style.legendWrapper}>
                         <div
-                              className={style.legendTitle}
+                              className={style.legend}
                         >
-                              График измерений
-                        </div>
-                        <div
-                              className={style.legendBody}
-                        >
-                              <div className={style.legendBodyColumn}>
-                                   <div className={style.legendBodyRow}>
-                                         1-1
-                                   </div>
-                                    <div className={style.legendBodyRow}>
-                                          1-2
-                                    </div>
-                                    <div className={style.legendBodyRow}>
-                                          1-3
-                                    </div>
-                                    <div className={style.legendBodyRow}>
-                                          1-4
-                                    </div>
+                              <div
+                                    className={style.legendTitle}
+                              >
+                                    ГРАФИК ИЗМЕРЕНИЙ
                               </div>
-                              <div className={style.legendBodyColumn}>
-                                    <div className={style.legendBodyRow}>
-                                          2-1
+                              <div
+                                    className={style.legendBody}
+                              >
+                                    <div className={style.legendBodyColumn}>
+                                          <div className={style.legendBodyRow}>
+                                                За период:
+                                                <div className={style.legendBodyRowValue}>
+                                                      c 01.12.2022 по 28.02.2023
+                                                </div>
+                                          </div>
+                                          <div className={style.legendBodyRow}>
+                                                Метки еды:
+                                                <div className={style.legendBodyRowValue}>
+                                                      натощак
+                                                </div>
+                                          </div>
+                                          <div className={style.legendBodyRow}>
+                                                Пользовательская метка:
+                                                <div className={style.legendBodyRowValue}>
+                                                      без метки
+                                                </div>
+                                          </div>
+                                          <div
+                                                className={style.legendBodyRow}
+                                                style={{minHeight:18}}
+                                          >
+
+                                          </div>
                                     </div>
-                                    <div className={style.legendBodyRow}>
-                                          2-2
-                                    </div>
-                                    <div className={style.legendBodyRow}>
-                                          2-3
-                                    </div>
-                                    <div className={style.legendBodyRow}>
-                                          2-4
+                                    <div className={style.legendBodyColumn}>
+                                          <div className={style.legendBodyRow}>
+                                                Всего результатов:
+                                                <div className={style.legendBodyRowValue}>
+                                                      8
+                                                </div>
+                                          </div>
+                                          <div className={style.legendBodyRow}>
+                                                Выше нормы:
+                                                <div className={style.legendBodyRowValue}>
+                                                      1
+                                                </div>
+                                          </div>
+                                          <div className={style.legendBodyRow}>
+                                                В пределах нормы:
+                                                <div className={style.legendBodyRowValue}>
+                                                      4
+                                                </div>
+                                          </div>
+                                          <div className={style.legendBodyRow}>
+                                                Ниже нормы:
+                                                <div className={style.legendBodyRowValue}>
+                                                      2
+                                                </div>
+                                          </div>
                                     </div>
                               </div>
                         </div>

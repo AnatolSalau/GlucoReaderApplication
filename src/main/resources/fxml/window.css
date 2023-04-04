@@ -45,6 +45,7 @@
 
 .scroll-bar:vertical .track{
       -fx-background-color :#F9F9FC;
+/*      -fx-background-color : lightgreen;*/
       -fx-border-color :transparent;
       -fx-background-radius : 0;
       -fx-border-radius : 0;

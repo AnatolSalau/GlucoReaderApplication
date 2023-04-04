@@ -1,3 +1,14 @@
+@font-face {
+      font-family: "MyriadPro-Semibold";   /*Can be any text*/
+      src: local("MyriadPro-Semibold"),
+      url("../../fonts/MyriadPro-Semibold.ttf") format("truetype");
+}
+@font-face {
+      font-family: "MyriadPro-Italic";   /*Can be any text*/
+      src: local("MyriadPro-Italic"),
+      url("../../fonts/MyriadPro-Italic.ttf") format("truetype");
+}
+
 .linearChart {
       display: flex;
       justify-content: space-between;
@@ -5,48 +16,51 @@
       flex-direction: column;
       height: 100%;
       flex: 1;
-      background-color: yellowgreen;
       border-radius: 4px;
 }
+.legendWrapper {
+      width: 100%;
+/*      border: 2px solid red;*/
+}
+
 .legend {
       display: flex;
-      width: 100%;
-      justify-content: space-between;
-      align-items: center;
       flex-direction: column;
-      background-color: #40B0A5;
-
+      padding-left: 35px;
 }
 
 .legendTitle {
       display: flex;
       align-items: center;
-      justify-content: center;
-      background-color: red;
-      width: 100%;
+      justify-content: flex-start;
+      background-color: white;
+      font-family: 'MyriadPro-Semibold', sans-serif;
+      font-size: 20px;
+      color: #355151;
 }
 
 .legendBody {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      background-color: lightblue;
-      width: 100%;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      gap: 50px;
 }
 
 .legendBodyColumn {
       display: flex;
-      align-items: center;
-      justify-content: center;
       flex-direction: column;
-      flex: 1;
-      border: 1px solid black;
 }
 .legendBodyRow {
       display: flex;
-      align-items: center;
-      justify-content: center;
       flex: 1;
+      font-family: 'MyriadPro-Italic', sans-serif;
+      font-size: 16px;
+      gap: 5px;
+}
+.legendBodyRowValue {
+      font-family: 'MyriadPro-Semibold', sans-serif;
+      font-size: 16px;
 }
 
 .chartWrapper {
@@ -56,4 +70,5 @@
       justify-content: center;
       align-items: center;
       background-color: lightgoldenrodyellow;
+      border-radius: 0 0 4px 4px;
 }
