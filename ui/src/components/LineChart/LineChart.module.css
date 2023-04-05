@@ -1,5 +1,7 @@
 .lineChart {
+      display: flex;
+      flex: 1;
       height: 100%;
-      width: 100% ;
       background-color: lightcyan;
+      border-radius: 0 0 4px 4px;
 }
