@@ -5,6 +5,7 @@ import ch.micheljung.waitomo.WaitomoTheme;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
+import javafx.print.PrinterJob;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -77,6 +78,14 @@ public class GlucoReaderApplication extends Application {
             primaryStage.show();
             TimeUnit.MILLISECONDS.sleep(100);
             primaryStage.setOpacity(1.0);
+
+/*            System.out.println("To Printer!");
+            PrinterJob job = PrinterJob.createPrinterJob();
+            if(job != null) {
+                  job.showPrintDialog(primaryStage);
+                  job.printPage(root);
+                  job.endJob();
+            }*/
       }
 
       //Stopping app

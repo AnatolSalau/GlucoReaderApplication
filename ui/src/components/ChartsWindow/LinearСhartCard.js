@@ -1,4 +1,5 @@
 import style from './LinearСhartCard.module.css'
+import LineChart from "../LineChart/LineChart";
 
 function LinearChartCard() {
       return (
@@ -75,7 +76,7 @@ function LinearChartCard() {
                   <div
                         className={style.chartWrapper}
                   >
-                        График
+                        <LineChart />
                   </div>
             </div>
       )
