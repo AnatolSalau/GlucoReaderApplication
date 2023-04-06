@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 
 import style from './LineChart.module.css'
 import { Chart } from "react-google-charts";
@@ -6,12 +6,14 @@ import { Chart } from "react-google-charts";
 
 function LineChart() {
       console.log("Render LineChart")
+      const ref = useRef();
       const [size, setSize] = useState({
             width: window.innerWidth,
             height: window.innerHeight
       });
 
       const resizeHandler = () => {
+            console.log(ref.current);
             setSize({
                   width: window.innerWidth,
                   height: window.innerHeight
@@ -21,6 +23,7 @@ function LineChart() {
       };
 
       useEffect(() => {
+            console.log(ref.current);
             window.addEventListener("resize", resizeHandler);
             resizeHandler();
       }, []);
@@ -63,8 +66,8 @@ function LineChart() {
                   position: 'top',
                   enableInteractivity: false
             },
-            width: size.width - 225,
-            height: '100%',
+            width: size.width - 240,
+            height: size.height - 425,
             tooltip: {isHtml: true},
             theme: 'material',
             hAxis: {
