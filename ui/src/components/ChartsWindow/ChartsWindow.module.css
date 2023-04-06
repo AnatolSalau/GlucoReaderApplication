@@ -21,6 +21,7 @@
       height: 100%;
       width: 100%;
       gap: 32px;
+      border-radius: 4px;
 }
 
 .chartCard {
@@ -33,6 +34,7 @@
       background: #FFFFFF;
       border: 1px solid #A1A2A4;
       border-radius: 4px;
+      padding: 4px;
 }
 
 .navBar {

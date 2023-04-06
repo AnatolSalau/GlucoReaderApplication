@@ -16,11 +16,15 @@
       flex-direction: column;
       height: 100%;
       flex: 1;
-      border-radius: 4px;
 }
 .legendWrapper {
+      display: flex;
       width: 100%;
-/*      border: 2px solid red;*/
+}
+.chartWrapper {
+      display: flex;
+      flex: 1;
+      width: 100%;
 }
 
 .legend {
@@ -63,12 +67,3 @@
       font-size: 16px;
 }
 
-.chartWrapper {
-      width: 100%;
-      display: flex;
-      flex: 1;
-      justify-content: center;
-      align-items: center;
-      background-color: lightgoldenrodyellow;
-      border-radius: 0 0 4px 4px;
-}
