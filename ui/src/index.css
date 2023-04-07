@@ -8,5 +8,9 @@ body {
   background-color: #FFFFFF;
   color: black;
 }
-
+/*Chart tooltip customization */
+div.google-visualization-tooltip {
+  width:300px;
+  background-color: lightgoldenrodyellow;
+}
 

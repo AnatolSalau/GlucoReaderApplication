@@ -1,10 +1,28 @@
+@font-face {
+      font-family: "MyriadPro-Semibold";   /*Can be any text*/
+      src: local("MyriadPro-Semibold"),
+      url("../../fonts/MyriadPro-Semibold.ttf") format("truetype");
+}
+@font-face {
+      font-family: "MyriadPro-Italic";   /*Can be any text*/
+      src: local("MyriadPro-Italic"),
+      url("../../fonts/MyriadPro-Italic.ttf") format("truetype");
+}
+
 .lineChart {
-/*      display: flex;
-      flex: 1;
-      height: 100%;
-      background-color: lightcyan;
-      border-radius: 0 0 4px 4px;*/
+      /*Выравнивание графика относительно левой стороны */
       display: flex;
       flex: 1;
+      padding-left: 5px;
+      font-family: 'MyriadPro-Semibold', sans-serif;
 /*      border: 1px solid blue;*/
+}
+
+text {
+      fill: rgba(0, 0, 0, 0.38);
+      font-family: 'MyriadPro-Semibold', sans-serif;
+}
+.google-visualization-tooltip {
+      border:none !important;
+      background-color: red!important;
 }
