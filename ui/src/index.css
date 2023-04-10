@@ -10,7 +10,21 @@ body {
 }
 /*Chart tooltip customization */
 div.google-visualization-tooltip {
-  width:300px;
-  background-color: lightgoldenrodyellow;
+  background-color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+
+/*div.google-visualization-tooltip:first-child {
+
+}*/
+
+/*ul.google-visualization-tooltip-item-list:first-child {
+  background-color: green;
+}*/
+
+
+li.google-visualization-tooltip-item:nth-child(1) {
+  display: none;
 }
 
