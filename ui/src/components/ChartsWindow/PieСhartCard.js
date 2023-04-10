@@ -1,11 +1,12 @@
 import style from './PieСhartCard.module.css'
+import PieChart from "../PieChart/PieChart";
 
 function PieChartCard() {
       return (
             <div
-                  className={style.pieChart}
+                  className={style.chartWrapper}
             >
-                  Круговая диаграмма
+                  <PieChart />
             </div>
       )
 }

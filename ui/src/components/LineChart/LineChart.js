@@ -52,17 +52,20 @@ function LineChart() {
       ];
 
       const options = {
-
-/*            theme: 'material',*/
             smoothLine: true,
             chartArea: {
                   // leave room for y-axis labels
 /*                  width: '92%',
                   height: '65%',
                   top:25*/
-                  width: '92%',
-                  height: '75%'
+                  top:25,
+                  left: 35,
+                  right: 35,
+                  bottom:50,
+                  width: '95%',
+                  height: '90%'
             },
+            enableInteractivity: false,
             legend: {
                   textStyle:{
                         fontSize: 16

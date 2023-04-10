@@ -24,7 +24,7 @@
       border-radius: 4px;
 }
 
-.chartCard {
+.linearChartCard {
       width: 100%;
       flex: 1;
       display: flex;
@@ -37,7 +37,22 @@
       padding-top: 18px;
       /* Выравнивание графика*/
       padding-left: 8px;
+      padding-bottom: 4px;
+}
 
+.pieChartCard {
+      width: 500px;
+      height: 608px;
+      display: flex;
+/*      justify-content: center;*/
+      align-items: center;
+      flex-direction: column;
+      background: #FFFFFF;
+      border: 1px solid #A1A2A4;
+      border-radius: 4px;
+      padding-top: 18px;
+      /* Выравнивание графика*/
+/*      padding-left: 8px;*/
       padding-bottom: 4px;
 }
 

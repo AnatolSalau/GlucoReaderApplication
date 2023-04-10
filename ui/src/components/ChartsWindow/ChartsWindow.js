@@ -18,10 +18,21 @@ function ChartsWindow() {
       
       const switchChartCad = (selectedItem) => {
             if (selectedItem === 'Линейный график') {
-                  return <LinearChartCard />;
+
+                  return                   <div
+                        className={style.linearChartCard}
+                  >
+                        <LinearChartCard />
+
+                  </div>;
             }
             else if (selectedItem === 'Круговая диаграмма') {
-                  return <PieChartCard />;
+                  return                   <div
+                        className={style.pieChartCard}
+                  >
+                        <PieChartCard />
+
+                  </div>;
             }
             else {
                   return null;
@@ -124,12 +135,7 @@ function ChartsWindow() {
                                     </Button>
                               </div>
                         </div>
-                        <div
-                              className={style.chartCard}
-                        >
-                                    {switchChartCad(selectedItem)}
-
-                        </div>
+                        {switchChartCad(selectedItem)}
                   </div>
             </div>
       )
