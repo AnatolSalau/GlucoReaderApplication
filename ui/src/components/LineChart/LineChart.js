@@ -65,7 +65,6 @@ function LineChart() {
                   width: '95%',
                   height: '90%'
             },
-            enableInteractivity: false,
             legend: {
                   textStyle:{
                         fontSize: 16

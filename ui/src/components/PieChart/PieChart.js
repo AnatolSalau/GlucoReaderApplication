@@ -3,27 +3,8 @@ import {useEffect, useState} from "react";
 import {Chart} from "react-google-charts";
 
 function PieChart() {
-      console.log("Render LineChart");
+      console.log("Render PieChart");
 
-      const [size, setSize] = useState({
-            width: window.innerWidth,
-            height: window.innerHeight
-      });
-
-      const resizeHandler = () => {
-            setSize({
-                  width: window.innerWidth,
-                  height: window.innerHeight
-            });
-            console.log("Resize handler");
-            console.log(size);
-      };
-
-      useEffect(() => {
-            window.addEventListener("resize", resizeHandler);
-            resizeHandler();
-
-      }, []);
       const data = [
             ["Task", "Hours per Day"],
             ["ниже нормы", 1],
@@ -67,7 +48,7 @@ function PieChart() {
             pieHole: 0.6,
             is3D: false,
             tooltip: {
-                  trigger: 'none',
+/*                  trigger: 'none',*/
                   isHtml: true,
             },
             enableInteractivity: false,
