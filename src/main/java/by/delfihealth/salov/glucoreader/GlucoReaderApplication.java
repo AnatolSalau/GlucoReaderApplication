@@ -86,6 +86,10 @@ public class GlucoReaderApplication extends Application {
                   job.printPage(root);
                   job.endJob();
             }*/
+            //---------------------------------------------------------------------------
+            //Create a PdfDocument object
+
+            //---------------------------------------------------------------------------
       }
 
       //Stopping app

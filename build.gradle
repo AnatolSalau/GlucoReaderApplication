@@ -19,9 +19,10 @@ repositories {
 }
 
 dependencies {
+/*// https://mvnrepository.com/artifact/e-iceblue/spire.pdf.free
+    implementation 'e-iceblue:spire.pdf.free:5.1.0'*/
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
-
     implementation 'io.github.micheljung:fxstage:0.8.3'
     implementation 'io.github.micheljung:jfx-waitomo-theme:0.3.0'
 
