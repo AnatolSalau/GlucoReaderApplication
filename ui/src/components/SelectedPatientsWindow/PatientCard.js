@@ -2,8 +2,9 @@ import style from './PatientCard.module.css'
 import Input from "../Input";
 import {VscTriangleDown} from "react-icons/vsc";
 import Button from "../Button";
-import {FaUserPlus} from "react-icons/fa";
+import {FaSave, FaUserPlus} from "react-icons/fa";
 import {MdOutlineCalendarToday} from "react-icons/md";
+import {FiArchive} from "react-icons/fi";
 
 function PatientCard({children}) {
       return (
@@ -126,10 +127,10 @@ function PatientCard({children}) {
                               <div className={style.innerRowEnd}>
                                     <div className={style.patientCardButtons}>
                                           <Button text="Сохранить">
-                                                <FaUserPlus />
+                                                <FaSave />
                                           </Button>
                                           <Button text="Поместить в архив">
-                                                <FaUserPlus />
+                                                <FiArchive/>
                                           </Button>
                                     </div>
 

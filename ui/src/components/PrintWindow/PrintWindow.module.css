@@ -2,6 +2,50 @@
       background: #F5F5F5;
       width: 100%;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: start;
+      justify-content: space-between;
+      flex-direction: column;
+}
+
+.navBar {
+      display: flex;
+      align-items: end;
+      background-color: lightgoldenrodyellow;
+      width: 100%;
+/*      padding-left: 10px;*/
+}
+.navBarWrapper {
+      display: flex;
+      padding-left: 65px;
+      padding-top: 30px;
+}
+.printBar {
+      display: flex;
+      flex: 1;
+      background-color: lightpink;
+      width: 100%;
+}
+
+.printBarWrapper {
+      display: flex;
+      flex: 1;
+      padding-left: 65px;
+      padding-right: 65px;
+      padding-bottom: 30px;
+      border: 1px solid blue;
+      gap: 60px;
+}
+.leftCol {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      background-color: lightgreen;
+}
+
+.rightCol {
+      display: flex;
+      flex-direction: column;
+      background-color: lightgrey;
+      gap: 40px;
+      align-items: end;
 }
