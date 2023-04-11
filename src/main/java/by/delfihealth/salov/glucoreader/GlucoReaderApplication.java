@@ -5,9 +5,11 @@ import ch.micheljung.fxwindow.FxStage;
 import ch.micheljung.waitomo.WaitomoTheme;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.collections.ObservableSet;
 import javafx.fxml.FXMLLoader;
 import javafx.print.*;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -15,6 +17,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.transform.Scale;
 import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 import org.springframework.boot.SpringApplication;
@@ -22,7 +25,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -92,12 +98,31 @@ public class GlucoReaderApplication extends Application {
       //Stopping app
       @Override
       public void stop() throws Exception {
+          /*
+            //-----------------------------------------------------------------------
+            //Get Html
             WebEngine engine = WindowController.getEngine();
             String html = (String) engine.executeScript("document.documentElement.outerHTML");
             //------------------------------------------------------------------------
+            String content = html;
+            String path = "src/main/resources/ui/build/for_print.html";
+
+            try {
+
+                  Files.write(Paths.get(path), content.getBytes());
+
+            } catch (IOException e) {
+                  e.printStackTrace();
+            }
+            //------------------------------------------------------------------------
+            ObservableList<Node> childrenList = root.getChildren();
+            System.out.println(childrenList);
+            Node node = childrenList.get(1);
+            System.out.println(node);
+            node.setOpacity(0.0);
+            //------------------------------------------------------------------------
             Printer myPrinter = null;
             ObservableSet<Printer> printers = Printer.getAllPrinters();
-            System.out.println(printers);
             for(Printer printer : printers){
                   if(printer.getName().matches("Microsoft Print to PDF")){
                         myPrinter = printer;
@@ -119,7 +144,7 @@ public class GlucoReaderApplication extends Application {
 
                   if (job != null) {
                         job.getJobSettings().setPageLayout(pageLayout);
-                        job.showPrintDialog(primaryStage);
+*//*                        job.showPrintDialog(primaryStage);*//*
                         boolean success = job.printPage(root);
                         success = job.printPage(root);
                         if (success) {
@@ -129,6 +154,7 @@ public class GlucoReaderApplication extends Application {
                         }
                   }
             }
+            */
             //------------------------------------------------------------------------
             //Stop spring boot application
             configurableApplicationContext.close();
