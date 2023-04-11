@@ -1,16 +1,20 @@
 package by.delfihealth.salov.glucoreader;
 
+import by.delfihealth.salov.glucoreader.fx.WindowController;
 import ch.micheljung.fxwindow.FxStage;
 import ch.micheljung.waitomo.WaitomoTheme;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.collections.ObservableSet;
 import javafx.fxml.FXMLLoader;
-import javafx.print.PrinterJob;
+import javafx.print.*;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.transform.Scale;
+import javafx.scene.web.WebEngine;
 import javafx.stage.Stage;
 
 import org.springframework.boot.SpringApplication;
@@ -30,8 +34,11 @@ public class GlucoReaderApplication extends Application {
       //SpringContext
       private ConfigurableApplicationContext configurableApplicationContext;
 
-      public GlucoReaderApplication() throws IOException {
-      }
+      private Stage primaryStage;
+
+      private Scene scene;
+
+      private BorderPane root;
 
       //Initialize spring, load resources before start, and run window root
       @Override
@@ -55,10 +62,11 @@ public class GlucoReaderApplication extends Application {
       //Set window stage settings and show it
       @Override
       public void start(Stage primaryStage) throws Exception {
+
             primaryStage.setOpacity(0.0);
 
             //Fxml resources
-            BorderPane root = FXMLLoader.load(getClass().getResource("/fxml/window.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/fxml/window.fxml"));
             String windowCss = getClass().getResource("/fxml/window.css").toExternalForm();
             Image titleImage = new Image("/png/erythrocytes.png");
 
@@ -66,7 +74,7 @@ public class GlucoReaderApplication extends Application {
                   .withContent(root)
                   .apply();
 
-            Scene scene = primaryStage.getScene();
+            scene = primaryStage.getScene();
 
             WaitomoTheme.apply(scene);
 
@@ -78,26 +86,52 @@ public class GlucoReaderApplication extends Application {
             primaryStage.show();
             TimeUnit.MILLISECONDS.sleep(100);
             primaryStage.setOpacity(1.0);
-
-/*            System.out.println("To Printer!");
-            PrinterJob job = PrinterJob.createPrinterJob();
-            if(job != null) {
-                  job.showPrintDialog(primaryStage);
-                  job.printPage(root);
-                  job.endJob();
-            }*/
-            //---------------------------------------------------------------------------
-            //Create a PdfDocument object
-
-            //---------------------------------------------------------------------------
+            this.primaryStage = primaryStage;
       }
 
       //Stopping app
       @Override
       public void stop() throws Exception {
+            WebEngine engine = WindowController.getEngine();
+            String html = (String) engine.executeScript("document.documentElement.outerHTML");
+            //------------------------------------------------------------------------
+            Printer myPrinter = null;
+            ObservableSet<Printer> printers = Printer.getAllPrinters();
+            System.out.println(printers);
+            for(Printer printer : printers){
+                  if(printer.getName().matches("Microsoft Print to PDF")){
+                        myPrinter = printer;
+                  }
+            }
+            if (myPrinter != null) {
+                  System.out.println("To Printer!");
+                  PrinterJob job = PrinterJob.createPrinterJob(myPrinter);
+                  // Scale image to full page
+
+                  final Printer printer = job.getPrinter();
+                  final Paper paper = job.getJobSettings().getPageLayout().getPaper();
+                  final PageLayout pageLayout = printer.createPageLayout(paper,
+                        PageOrientation.LANDSCAPE, Printer.MarginType.HARDWARE_MINIMUM);
+                  final double scaleX = pageLayout.getPrintableWidth() / root.getWidth();
+                  final double scaleY = pageLayout.getPrintableHeight() / root.getHeight();
+                  final Scale scale = new Scale(scaleX, scaleY);
+                  root.getTransforms().add(scale);
+
+                  if (job != null) {
+                        job.getJobSettings().setPageLayout(pageLayout);
+                        job.showPrintDialog(primaryStage);
+                        boolean success = job.printPage(root);
+                        success = job.printPage(root);
+                        if (success) {
+                              System.out.println("Done printing!");
+                              job.endJob();
+                              root.getTransforms().remove(scale);
+                        }
+                  }
+            }
+            //------------------------------------------------------------------------
             //Stop spring boot application
             configurableApplicationContext.close();
-
       }
 
       //Entry point in app and start JavaFx

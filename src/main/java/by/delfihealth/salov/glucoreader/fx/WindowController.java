@@ -32,7 +32,7 @@ public class WindowController implements Initializable {
             "/ui/build/index.html"
       ).toExternalForm();
 
-      private WebEngine engine;
+      private static WebEngine engine;
 
       @Override
       public void initialize(URL location, ResourceBundle resources) {
@@ -40,9 +40,7 @@ public class WindowController implements Initializable {
             engine = webView.getEngine();
             engine.setJavaScriptEnabled(true);
             engine.load(linkWindow);
-
             playSplashScreenAnimation(splashScreen, 1000,500).play();
-
       }
 
       private PauseTransition playSplashScreenAnimation( Pane pane, double pauseDuration, double visibilityChangeDuration) {
@@ -63,5 +61,9 @@ public class WindowController implements Initializable {
 
             });
             return pause;
+      }
+
+      public static WebEngine getEngine() {
+            return engine;
       }
 }
