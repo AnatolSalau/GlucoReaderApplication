@@ -4,7 +4,7 @@ import style from './LineChart.module.css'
 import { Chart } from "react-google-charts";
 
 function LineChart() {
-      console.log("Render LineChart");
+      console.log("Render PrintLineChart");
 
       const [size, setSize] = useState({
             width: window.innerWidth,
@@ -53,6 +53,7 @@ function LineChart() {
 
       const options = {
             smoothLine: true,
+            alwaysOutside: true,
             chartArea: {
                   // leave room for y-axis labels
 /*                  width: '92%',

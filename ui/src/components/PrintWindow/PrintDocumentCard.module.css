@@ -1,0 +1,10 @@
+.printDocumentCard {
+      display: flex;
+      flex-direction: column;
+      min-width: 874px;
+      min-height: 1240px;
+      max-width: 874px;
+      max-height: 1240px;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      background-color: white;
+}

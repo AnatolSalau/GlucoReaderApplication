@@ -7,6 +7,12 @@ import Button from "../Button";
 import {FiCheck, FiLayout, FiPrinter} from "react-icons/fi";
 import PrintWindowTab from "./PrintWindowTab";
 import PrintWindowAddTab from "./PrintWindowAddTab";
+import PrintDocumentCard from "./PrintDocumentCard";
+import LineChart from "../LineChart/LineChart";
+import PieChart from "../PieChart/PieChart";
+import PieChartCard from "../ChartsWindow/PieСhartCard";
+import LinearChartCard from "../ChartsWindow/LinearСhartCard";
+import PrintLineChart from "../PrintLineChart/PrintLineChart";
 
 
 function PrintWindow() {
@@ -68,7 +74,15 @@ function PrintWindow() {
                                     <div className={style.leftColBodyWrapper}>
                                           <div className={style.scrollable}>
                                                 <div className={style.leftColBody}>
-                                                      Body
+                                                      <PrintDocumentCard>
+                                                            <PrintLineChart />
+                                                      </PrintDocumentCard>
+                                                      <PrintDocumentCard>
+
+                                                      </PrintDocumentCard>
+                                                      <PrintDocumentCard>
+
+                                                      </PrintDocumentCard>
                                                 </div>
                                           </div>
 

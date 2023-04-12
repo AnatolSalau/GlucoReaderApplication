@@ -9,7 +9,7 @@
       url("../../fonts/MyriadPro-Italic.ttf") format("truetype");
 }
 
-.lineChart {
+.printLineChart {
       /*Выравнивание графика относительно левой стороны */
       display: flex;
       flex: 1;
