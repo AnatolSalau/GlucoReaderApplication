@@ -1,3 +1,14 @@
+@font-face {
+      font-family: "MyriadPro-Semibold-Italic";   /*Can be any text*/
+      src: local("MyriadPro-Semibold-Italic"),
+      url("../../fonts/MyriadPro-Semibold-Italic.ttf") format("truetype");
+}
+@font-face {
+      font-family: "MyriadPro-Regular";   /*Can be any text*/
+      src: local("MyriadPro-Regular"),
+      url("../../fonts/MyriadPro-Regular.ttf") format("truetype");
+}
+
 .printWindow {
       background: #F5F5F5;
       width: 100%;
@@ -5,6 +16,8 @@
       align-items: start;
       justify-content: space-between;
       flex-direction: column;
+      gap: 8px;
+      white-space:nowrap;
 }
 
 .navBar {
@@ -17,6 +30,7 @@
       display: flex;
       padding-left: 65px;
       padding-top: 30px;
+      gap: 30px;
 }
 .printBar {
       display: flex;
@@ -36,9 +50,45 @@
       display: flex;
       flex-direction: column;
       flex: 1;
-      background-color: lightgreen;
+      gap: 30px;
+/*      background-color: lightgreen;*/
 }
 
+.leftColNavBar {
+      display: flex;
+      align-items: center;
+/*      background-color: lightcoral;*/
+      font-family: 'MyriadPro-Semibold-Italic', sans-serif;
+      font-size: 16px;
+      gap: 8px;
+      padding-top: 8px;
+}
+
+.leftColBodyWrapper {
+      display: flex;
+      flex: 1;
+      background: rgba(188, 188, 198, 0.5);
+      border: 2px solid rgba(151, 151, 151, 0.8);
+      border-radius: 3px;
+      position: relative; /* <------------------------- required */
+}
+
+.scrollable {
+      border-radius: 3px;
+/*      background-color: lightcoral;*/
+      position: absolute; /* <------------------------- required */
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0; /* <------- required */
+      overflow-y: scroll; /* <--------------------------- required */
+/*      overflow-x: scroll; !* <--------------------------- required *!*/
+}
+
+.leftColBody {
+      display: flex;
+      height: 2000px;
+}
 .rightCol {
       display: flex;
       flex-direction: column;

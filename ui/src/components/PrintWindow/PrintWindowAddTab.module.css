@@ -1,0 +1,28 @@
+.printWindowAddTab {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      min-width: 30px;
+      height: 30px;
+
+      background: #A7EEE1;
+      border-radius: 4px;
+}
+.svgWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 25px;
+      min-width: 25px;
+      cursor: pointer;
+}
+.svgWrapper > svg {
+      color: black;
+      font-size: 22px;
+}
+
+.svgWrapper > svg:hover {
+      color: black;
+      font-size: 25px;
+}

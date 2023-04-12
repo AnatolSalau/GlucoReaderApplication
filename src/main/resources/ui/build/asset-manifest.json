@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.3f6f95e4.css",
-    "main.js": "./static/js/main.477ed72e.js",
+    "main.css": "./static/css/main.1c975d5c.css",
+    "main.js": "./static/js/main.5f37844b.js",
     "static/media/MyriadPro-Semibold-Italic.ttf": "./static/media/MyriadPro-Semibold-Italic.3bba058ed7df29f537ce.ttf",
     "static/media/MyriadPro-Italic.ttf": "./static/media/MyriadPro-Italic.fdc0c76945c473af8544.ttf",
     "static/media/MyriadPro-Regular.ttf": "./static/media/MyriadPro-Regular.36cbf678ae00bd8b2c6d.ttf",
@@ -11,11 +11,11 @@
     "static/media/after.svg": "./static/media/after.18d07b230352aabc780bc8bf62b4e889.svg",
     "static/media/before.svg": "./static/media/before.ea84f9b1eb314854705c2a42bc611351.svg",
     "index.html": "./index.html",
-    "main.3f6f95e4.css.map": "./static/css/main.3f6f95e4.css.map",
-    "main.477ed72e.js.map": "./static/js/main.477ed72e.js.map"
+    "main.1c975d5c.css.map": "./static/css/main.1c975d5c.css.map",
+    "main.5f37844b.js.map": "./static/js/main.5f37844b.js.map"
   },
   "entrypoints": [
-    "static/css/main.3f6f95e4.css",
-    "static/js/main.477ed72e.js"
+    "static/css/main.1c975d5c.css",
+    "static/js/main.5f37844b.js"
   ]
 }

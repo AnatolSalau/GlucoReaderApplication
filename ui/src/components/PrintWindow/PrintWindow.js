@@ -4,7 +4,9 @@ import {useState} from "react";
 import Input from "../Input";
 import {VscTriangleDown} from "react-icons/vsc";
 import Button from "../Button";
-import {FiCheck, FiPrinter} from "react-icons/fi";
+import {FiCheck, FiLayout, FiPrinter} from "react-icons/fi";
+import PrintWindowTab from "./PrintWindowTab";
+import PrintWindowAddTab from "./PrintWindowAddTab";
 
 
 function PrintWindow() {
@@ -44,7 +46,33 @@ function PrintWindow() {
                               className={style.printBarWrapper}
                         >
                               <div className={style.leftCol}>
-                                    LeftCol
+                                    <div className={style.leftColNavBar}>
+                                          Включить в документ:
+                                          <PrintWindowTab
+                                                text="таблица данных"
+                                          >
+                                                <FiLayout />
+                                          </PrintWindowTab>
+                                          <PrintWindowTab
+                                                text="круговая диаграмма"
+                                          >
+                                                <FiLayout />
+                                          </PrintWindowTab>
+                                          <PrintWindowTab
+                                                text="линейный график"
+                                          >
+                                                <FiLayout />
+                                          </PrintWindowTab>
+                                          <PrintWindowAddTab />
+                                    </div>
+                                    <div className={style.leftColBodyWrapper}>
+                                          <div className={style.scrollable}>
+                                                <div className={style.leftColBody}>
+                                                      Body
+                                                </div>
+                                          </div>
+
+                                    </div>
                               </div>
                               <div className={style.rightCol}>
                                     <Button
