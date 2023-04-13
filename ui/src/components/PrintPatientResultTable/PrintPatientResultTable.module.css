@@ -1,0 +1,36 @@
+@font-face {
+      font-family: "MyriadPro-Semibold";   /*Can be any text*/
+      src: local("MyriadPro-Semibold"),
+      url("../../fonts/MyriadPro-Semibold.ttf") format("truetype");
+}
+
+@font-face {
+      font-family: "MyriadPro-Regular";   /*Can be any text*/
+      src: local("MyriadPro-Regular"),
+      url("../../fonts/MyriadPro-Regular.ttf") format("truetype");
+}
+
+.table {
+      display: flex;
+      justify-content: flex-start;
+      flex: 1;
+      background-color: #F9F9FC;
+      border: 1px solid #A1A2A4;
+      border-radius: 4px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+}
+
+.scrollableWrapper {
+      display: flex;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+}
+
+.wrapperTable {
+      display:table;
+      border-collapse:collapse;
+}
+

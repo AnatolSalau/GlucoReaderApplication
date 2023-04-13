@@ -1,0 +1,71 @@
+@font-face {
+      font-family: "MyriadPro-Semibold";   /*Can be any text*/
+      src: local("MyriadPro-Semibold"),
+      url("../../fonts/MyriadPro-Semibold.ttf") format("truetype");
+}
+@font-face {
+      font-family: "MyriadPro-Italic";   /*Can be any text*/
+      src: local("MyriadPro-Italic"),
+      url("../../fonts/MyriadPro-Italic.ttf") format("truetype");
+}
+
+.linearChart {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      border: 1px solid #A1A2A4;
+      border-radius: 4px;
+      padding-bottom: 2px;
+}
+.legendWrapper {
+      padding-top: 10px;
+      display: flex;
+      width: 100%;
+}
+.chartWrapper {
+      display: flex;
+      flex: 1;
+      width: 100%;
+}
+
+.legend {
+      display: flex;
+      flex-direction: column;
+      padding-left: 40px;
+/*      border: 1px solid red;*/
+}
+
+.legendTitle {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: white;
+      font-family: 'MyriadPro-Semibold', sans-serif;
+      font-size: 18px;
+      color: #355151;
+}
+
+.legendBody {
+      display: flex;
+      align-items: center;
+      padding-top: 18px;
+      gap: 50px;
+}
+
+.legendBodyColumn {
+      display: flex;
+      flex-direction: column;
+}
+.legendBodyRow {
+      display: flex;
+      flex: 1;
+      font-family: 'MyriadPro-Italic', sans-serif;
+      font-size: 14px;
+      gap: 5px;
+}
+.legendBodyRowValue {
+      font-family: 'MyriadPro-Semibold', sans-serif;
+      font-size: 14px;
+}
+

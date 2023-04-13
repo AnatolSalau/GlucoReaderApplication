@@ -8,11 +8,9 @@ import {FiCheck, FiLayout, FiPrinter} from "react-icons/fi";
 import PrintWindowTab from "./PrintWindowTab";
 import PrintWindowAddTab from "./PrintWindowAddTab";
 import PrintDocumentCard from "./PrintDocumentCard";
-import LineChart from "../LineChart/LineChart";
-import PieChart from "../PieChart/PieChart";
-import PieChartCard from "../ChartsWindow/PieСhartCard";
-import LinearChartCard from "../ChartsWindow/LinearСhartCard";
-import PrintLineChart from "../PrintLineChart/PrintLineChart";
+import PrintLinearChartCard from "../PrintLineChart/PrintLinearСhartCard";
+import PrintPieChartCard from "../PrintPieChart/PrintPieChartCard";
+import PrintPatientResultTable from "../PrintPatientResultTable/PrintPatientResultTable";
 
 
 function PrintWindow() {
@@ -75,13 +73,13 @@ function PrintWindow() {
                                           <div className={style.scrollable}>
                                                 <div className={style.leftColBody}>
                                                       <PrintDocumentCard>
-                                                            <PrintLineChart />
+                                                            <PrintLinearChartCard />
                                                       </PrintDocumentCard>
                                                       <PrintDocumentCard>
-
+                                                            <PrintPieChartCard />
                                                       </PrintDocumentCard>
                                                       <PrintDocumentCard>
-
+                                                            <PrintPatientResultTable />
                                                       </PrintDocumentCard>
                                                 </div>
                                           </div>

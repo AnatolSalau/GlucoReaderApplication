@@ -1,0 +1,109 @@
+@font-face {
+      font-family: "MyriadPro-Semibold";   /*Can be any text*/
+      src: local("MyriadPro-Semibold"),
+      url("../../fonts/MyriadPro-Semibold.ttf") format("truetype");
+}
+
+@font-face {
+      font-family: "MyriadPro-Regular";   /*Can be any text*/
+      src: local("MyriadPro-Regular"),
+      url("../../fonts/MyriadPro-Regular.ttf") format("truetype");
+}
+
+.pieChart {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /*Выравнивание графика относительно левой стороны */
+/*      padding-left: 5px;*/
+      font-family: 'MyriadPro-Semibold', sans-serif;
+      /*      border: 1px solid blue;*/
+      border: 1px solid #A1A2A4;
+      border-radius: 4px;
+      padding-bottom: 5px;
+      padding-top: 5px;
+}
+
+.legendTop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+
+.legendLabel {
+      font-family: 'MyriadPro-Semibold', sans-serif;
+      font-size: 20px;
+      color: #355151;
+      padding-bottom: 16px;
+}
+
+.legendTopBody {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+
+.row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'MyriadPro-Regular', sans-serif;
+      font-size: 16px;
+      color: #355151;
+      gap: 2px;
+}
+
+.bold {
+      font-family: 'MyriadPro-Semibold', sans-serif;
+      color: black;
+}
+
+.bottomBody {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 400px ;
+      padding-top: 6px;
+}
+
+.bottomCol {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+
+.lessMark {
+      min-width: 5px;
+      min-height: 16px;
+      background: #69B2FC;
+      border-radius: 4px;
+}
+.normMark {
+      min-width: 5px;
+      min-height: 16px;
+      background: #67F4A8;;
+      border-radius: 4px;
+}
+.moreMark {
+      min-width: 5px;
+      min-height: 16px;
+      background: #FC9969;
+      border-radius: 4px;
+}
+
+div > svg > g:nth-child(4) > text {
+      font-family: 'MyriadPro-Semibold', sans-serif;
+      font-size: 16px;
+      color: #355151;
+}
+div > svg > g:nth-child(5) > text {
+      font-family: 'MyriadPro-Semibold', sans-serif;
+      font-size: 16px;
+      color: #355151;
+}
+
+div > svg > g:nth-child(6) > text {
+      font-family: 'MyriadPro-Semibold', sans-serif;
+      font-size: 16px;
+      color: #355151;
+}

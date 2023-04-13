@@ -12,7 +12,7 @@ function PrintLineChart() {
                   'Ниже нормы',
                   'Норма',
                   'Выше нормы',
-                  'Уровень глюкозы (ММОЛЬ/Л)',
+                  'Уровень глюкозы',
                   'Уровень глюкозы'
             ],
             [1, 4, 4, 4, 6, {v: 6, f: '6 \n01.12.2022'}],
@@ -35,15 +35,11 @@ function PrintLineChart() {
       const options = {
             smoothLine: true,
             chartArea: {
-                  // leave room for y-axis labels
-/*                  width: '92%',
-                  height: '65%',
-                  top:25*/
                   top:25,
                   left: 50,
-                  right: 50,
-                  bottom:150,
-                  width: '90%',
+                  right: 55,
+                  bottom:125,
+                  width: '70%',
                   height: '70%'
             },
             legend: {
@@ -51,9 +47,10 @@ function PrintLineChart() {
                         fontSize: 16
                   },
                   position: 'top',
+                  maxLines: 5,
                   enableInteractivity: false
             },
-            width: 850,
+            width: 750,
             height: 500,
             tooltip: {
                   isHtml: true,
@@ -66,26 +63,26 @@ function PrintLineChart() {
                   },
                   baselineColor: 'white',
                   ticks: [
-                        {v: 1, f: '07.0001.12.2022'},
-                        {v: 2, f: '07.2801.12.2022'},
-                        {v: 3, f: '07.3501.12.2022'},
-                        {v: 4, f: '07.0002.12.2022'},
-                        {v: 5, f: '07.2802.12.2022'},
-                        {v: 6, f: '07.3502.12.2022'},
-                        {v: 7, f: '07.0003.12.2022'},
-                        {v: 8, f: '07.2803.12.2022'},
-                        {v: 9, f: '07.3503.12.2022'},
-                        {v: 10, f: '07.0004.12.2022'},
-                        {v: 11, f: '07.2804.12.2022'},
-                        {v: 12, f: '07.3504.12.2022'},
-                        {v: 13, f: '07.0005.12.2022'},
-                        {v: 14, f: '07.2805.12.2022'},
-                        {v: 15, f: '07.3505.12.2022'}
+                        {v: 1, f: '07.00 (01.12.2022)'},
+                        {v: 2, f: '07.28 (01.12.2022)'},
+                        {v: 3, f: '07.35 (01.12.2022)'},
+                        {v: 4, f: '07.00 (02.12.2022)'},
+                        {v: 5, f: '07.28 (02.12.2022)'},
+                        {v: 6, f: '07.35 (02.12.2022)'},
+                        {v: 7, f: '07.00 (03.12.2022)'},
+                        {v: 8, f: '07.28 (03.12.2022)'},
+                        {v: 9, f: '07.35 (03.12.2022)'},
+                        {v: 10, f: '07.00 (04.12.2022)'},
+                        {v: 11, f: '07.28 (04.12.2022)'},
+                        {v: 12, f: '07.35 (04.12.2022)'},
+                        {v: 13, f: '07.00 (05.12.2022)'},
+                        {v: 14, f: '07.28 (05.12.2022)'},
+                        {v: 15, f: '07.35 (05.12.2022)'}
                   ],
                   title: 'ВРЕМЯ/ДАТА',
-                  slantedText: false,
+                  slantedText: true,
 /*                  alwaysOutside: true,*/
-/*                  slantedTextAngle: 90,*/
+                  slantedTextAngle: 60,
                   maxAlternation: 6
             },
             isStacked: true,
@@ -126,6 +123,7 @@ function PrintLineChart() {
                         color: 'black',
                         type: 'line',
                         visibleInLegend: false,
+                        enableInteractivity: false
                   }
             },
             seriesType: 'area',

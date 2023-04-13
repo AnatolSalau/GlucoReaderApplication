@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import {Chart} from "react-google-charts";
 
 function PieChart() {
-      console.log("Render PieChart");
+      console.log("Render PieChartCard");
 
       const data = [
             ["Task", "Hours per Day"],

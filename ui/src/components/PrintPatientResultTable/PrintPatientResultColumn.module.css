@@ -1,0 +1,133 @@
+@font-face {
+      font-family: "MyriadPro-Semibold";   /*Can be any text*/
+      src: local("MyriadPro-Semibold"),
+      url("../../fonts/MyriadPro-Semibold.ttf") format("truetype");
+}
+
+@font-face {
+      font-family: "MyriadPro-Regular";   /*Can be any text*/
+      src: local("MyriadPro-Regular"),
+      url("../../fonts/MyriadPro-Regular.ttf") format("truetype");
+}
+
+
+.column {
+      display: table-cell;
+      height: 10px;
+}
+
+.columnHeader {
+      top: 0;
+      padding: 0 10px 0 10px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      /*      white-space: pre-wrap;*/
+      background-color: #A7EEE1;
+      min-height: 48px;
+      font-family: 'MyriadPro-Semibold', sans-serif;
+      font-size: 12px;
+      color: #484964;
+      cursor: pointer;
+}
+
+
+.filterWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 18px;
+}
+
+.sortWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 19px;
+}
+
+.filterWrapper svg {
+      font-size: 16px;
+}
+
+.sortWrapper svg {
+      font-size: 17px;
+}
+
+.columnRow {
+      display: flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 10px 0 10px;
+      font-family: 'MyriadPro-Regular', sans-serif;;
+      font-size: 14px;
+      color: #484964;
+      border-bottom: 1px solid #F0EFF6;
+      border-right: 1px solid #F0EFF6;
+      white-space: nowrap;
+}
+
+.columnRowMeasurementNormal {
+      color: #40B0A5;
+      display: flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 10px 0 10px;
+      font-family: 'MyriadPro-Semibold', sans-serif;
+      font-size: 14px;
+      border-bottom: 1px solid #F0EFF6;
+      border-right: 1px solid #F0EFF6;
+      white-space: nowrap;
+}
+
+.columnRowMeasurementLess {
+      color: #69B2FC;
+      display: flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 10px 0 10px;
+      font-family: 'MyriadPro-Semibold', sans-serif;
+      font-size: 14px;
+      border-bottom: 1px solid #F0EFF6;
+      border-right: 1px solid #F0EFF6;
+      white-space: nowrap;
+}
+
+.columnRowMeasurementMore {
+      color: #FC9969;
+      display: flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 10px 0 10px;
+      font-family: 'MyriadPro-Semibold', sans-serif;
+      font-size: 14px;
+      border-bottom: 1px solid #F0EFF6;
+      border-right: 1px solid #F0EFF6;
+      white-space: nowrap;
+}
+
+.columnRowMark {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      flex: 1;
+      gap: 24px;
+      font-family: 'MyriadPro-Regular', sans-serif;
+      color: #484964;
+}
+
+.markOfType {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 20px;
+      width: 13px;
+}
+
+.checkMark {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 20px;
+      width: 13px;
+}
