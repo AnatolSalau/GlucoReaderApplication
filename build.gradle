@@ -25,6 +25,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'io.github.micheljung:fxstage:0.8.3'
     implementation 'io.github.micheljung:jfx-waitomo-theme:0.3.0'
+    implementation 'io.github.java-native:jssc:2.9.4'
+    // https://mvnrepository.com/artifact/com.fazecast/jSerialComm
+    implementation 'com.fazecast:jSerialComm:2.9.3'
+
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'

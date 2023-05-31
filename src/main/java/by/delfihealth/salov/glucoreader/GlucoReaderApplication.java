@@ -61,8 +61,6 @@ public class GlucoReaderApplication extends Application {
             windowFXML.setControllerFactory(configurableApplicationContext::getBean);
 
             //Load resources
-
-
       }
 
       //Set window stage settings and show it
@@ -99,6 +97,7 @@ public class GlucoReaderApplication extends Application {
       @Override
       public void stop() throws Exception {
           /*
+            
             //-----------------------------------------------------------------------
             //Get Html
             WebEngine engine = WindowController.getEngine();

@@ -1,0 +1,2 @@
+https://github.com/java-native/jssc
+https://mvnrepository.com/artifact/com.fazecast/jSerialComm/2.9.3
