@@ -1,0 +1,14 @@
+https://github.com/java-native/jssc
+https://mvnrepository.com/artifact/com.fazecast/jSerialComm/2.9.3
+
+if(parity == 1){//Parity ODD
+    }
+    else if(parity == 2){//Parity EVEN
+    }
+    else if(parity == 3){//Parity MARK
+    }
+    else if(parity == 4){//Parity SPACE
+    }
+    else if(parity == 0){
+        //Do nothing (Parity NONE)
+    }
