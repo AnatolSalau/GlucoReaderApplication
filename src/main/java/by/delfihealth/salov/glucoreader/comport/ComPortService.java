@@ -73,6 +73,9 @@ public class ComPortService {
 
             for (int i = 0; i < responseArrHex.length; i++) {
                   if (responseArrHex[i].startsWith("f")) {
+                        System.out.println("!!!!!!!!!! : " + responseArrHex[i]);
+                  }
+                  if (responseArrHex[i].startsWith("f") && responseArrHex[i].length() > 1) {
                         responseArrHex[i] = responseArrHex[i]
                               .substring(responseArrHex[i].length()-2);
                   }

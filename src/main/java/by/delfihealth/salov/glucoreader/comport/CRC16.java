@@ -58,12 +58,4 @@ public class CRC16 implements Checksum {
       public void update(int b) {
             sum = (sum >> 8) ^ TABLE[( (sum)^(b&0xff) ) & 0xff];
       }
-
-      public static void main(String[] args) {
-            CRC16 crc = new CRC16();
-            crc.update(12);
-            crc.update(16);
-            System.out.println(Integer.toHexString((int)crc.getValue()));
-      }
-
 }
