@@ -41,7 +41,6 @@ public class ComPortService {
 
             byte[] arrByteFromHex = new byte[requestArrHex.length];
             for (int i = 0; i < requestArrHex.length; i++) {
-                  //arrByteFromHex[i] = Byte.parseByte(requestArrHex[i],16);
                   byte[] bytes = HexFormat.of().parseHex(requestArrHex[i]);
                   arrByteFromHex[i] = bytes[0];
             }
