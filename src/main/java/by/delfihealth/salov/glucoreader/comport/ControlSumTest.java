@@ -6,8 +6,7 @@ public class ControlSumTest {
       public static void main(String[] args) {
             String[] requestProtocolVersionHex = {"02","06","00","01","20","5D"};
             String[] dataHex = {"02","06","00","01"};
-            String crcLoHex = "20";
-            String crcHiHex = "5D";
+
 
             CRC16 crc16 = new CRC16();
 
@@ -28,6 +27,14 @@ public class ControlSumTest {
             crc16.update(byte2);
             crc16.update(byte3);
 
-            System.out.println(Integer.toHexString((int)crc16.getValue()));
+            String crcLoHiHex = Integer.toHexString((int)crc16.getValue());
+            System.out.println("CrcLoHiHex : " + crcLoHiHex);
+
+            String crcLoHex = crcLoHiHex.substring(2, 4);
+            System.out.println("crcLoHex : " + crcLoHex);
+
+
+            String crcHiHex = crcLoHiHex.substring(0, 2);
+            System.out.println("crcHiHex : " + crcHiHex);
       }
 }
