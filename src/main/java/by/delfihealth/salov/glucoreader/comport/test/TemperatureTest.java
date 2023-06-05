@@ -1,4 +1,4 @@
-package by.delfihealth.salov.glucoreader.comport;
+package by.delfihealth.salov.glucoreader.comport.test;
 
 public class TemperatureTest {
       public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package by.delfihealth.salov.glucoreader.comport;
+package by.delfihealth.salov.glucoreader.comport.test;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 public class ComPortTest {
       public static void main(String[] args) {
             ComPortService comPortService = new ComPortService();
-            List<String> allSystemPortNames = comPortService.getAllSystemPortNames();
+/*            List<String> allSystemPortNames = comPortService.getAllSystemPortNames();
             System.out.println(allSystemPortNames);
             List<String> allSystemPortDescription = comPortService.getAllSystemPortDescription();
             System.out.println(allSystemPortDescription);
@@ -43,16 +43,25 @@ public class ComPortTest {
             System.out.println("Request to port : " + Arrays.toString(requestGetDateTime));
             String[] responseGetDateTime = comPortService.getResponseFromPort("COM2", requestGetDateTime, 11);
             System.out.println("Response from port : " + Arrays.toString(responseGetDateTime));
-            System.out.println("__________________________________________________________________________\n");
+            System.out.println("__________________________________________________________________________\n");*/
 
             System.out.println("__________________________________________________________________________ \n");
             System.out.println("GetValues");
-            String[] requestGetValues = {"02","0A","00","05","00","00","04","00","A5","12"};
+/*            String[] requestGetValues = {"02","0A","00","05","00","00","00","00","A7","D2"};*/
+/*            String[] requestGetValues = {"02","0A","00","05","00","00","01","00","A6","42"};*/
+/*            String[] requestGetValues = {"02","0A","00","05","01","00","01","00","A7","BE"};*/
+/*            String[] requestGetValues = {"02","0A","00","05","00","00","02","00","A6","B2"};*/
+            String[] requestGetValues = {"02","0A","00","05","01","00","02","00","A7","4E"};
+/*            String[] requestGetValues = {"02","0A","00","05","00","00","03","00","A7","22"};*/
+/*            String[] requestGetValues = {"02","0A","00","05","00","00","04","00","A5","12"};*/
+
             System.out.println("Request to port : " + Arrays.toString(requestGetValues));
-            String[] responseGetValues = comPortService.getResponseFromPort("COM2", requestGetValues, 35);
+            String[] responseGetValues = comPortService.getResponseFromPort(
+                  "COM2",
+                  requestGetValues,
+                  20);
             System.out.println("Response from port : " + Arrays.toString(responseGetValues));
             System.out.println("__________________________________________________________________________\n");
-
             System.out.println("__________________________________________________________________________ \n");
             System.out.println("GetConverterType");
             String[] requestGetConverterType = {"02","06","00","31","20","49"};
