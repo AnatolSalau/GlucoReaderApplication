@@ -1,4 +1,12 @@
 package by.delfihealth.salov.glucoreader.comport.entity;
 
-public class GetConverterTypeResponse {
+import javafx.util.Pair;
+
+import java.util.Map;
+
+public class GetConverterTypeResponse extends ComPortData {
+
+      public GetConverterTypeResponse(String code, Map<Integer, Pair<String, String>> data) {
+            super(code, data);
+      }
 }

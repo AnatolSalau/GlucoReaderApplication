@@ -1,4 +1,11 @@
 package by.delfihealth.salov.glucoreader.comport.entity;
 
-public class GetConverterTypeRequest {
+import javafx.util.Pair;
+
+import java.util.Map;
+
+public class GetConverterTypeRequest extends ComPortData{
+      public GetConverterTypeRequest(String code, Map<Integer, Pair<String, String>> data) {
+            super(code, data);
+      }
 }
