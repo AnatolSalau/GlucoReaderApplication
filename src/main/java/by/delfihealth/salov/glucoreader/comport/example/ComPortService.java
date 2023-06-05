@@ -1,4 +1,4 @@
-package by.delfihealth.salov.glucoreader.comport.test;
+package by.delfihealth.salov.glucoreader.comport.example;
 
 import com.fazecast.jSerialComm.SerialPort;
 
