@@ -23,7 +23,7 @@ public enum CommandType {
       ),
       GET_CONVERTER_TYPE(
             "0x31",
-            "Reading converter type, serial number, plate version, firmware version"
+            "Reading converter type, serial number, plate   version, firmware version"
       ),
       SET_DATE_TIME(
             "0x81",

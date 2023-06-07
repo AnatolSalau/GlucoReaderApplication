@@ -1,4 +1,4 @@
-package by.delfihealth.salov.glucoreader.comport.example;
+package by.delfihealth.salov.glucoreader.comport.examples;
 
 import java.util.HexFormat;
 

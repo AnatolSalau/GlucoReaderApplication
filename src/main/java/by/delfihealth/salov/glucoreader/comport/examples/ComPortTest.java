@@ -1,7 +1,6 @@
-package by.delfihealth.salov.glucoreader.comport.example;
+package by.delfihealth.salov.glucoreader.comport.examples;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class ComPortTest {
       public static void main(String[] args) {

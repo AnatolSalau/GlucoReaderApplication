@@ -1,6 +1,6 @@
 package by.delfihealth.salov.glucoreader.comport.enums;
 
-public enum HexType {
+public enum HexByteType {
       STX("Start of data packet"),
       LEN_LO("Packet length, low byte"),
       LEN_HI("Packet length, high byte"),
@@ -13,7 +13,7 @@ public enum HexType {
 
       public final String textDescription;
 
-      HexType(String textDescription) {
+      HexByteType(String textDescription) {
             this.textDescription = textDescription;
       }
 }

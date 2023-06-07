@@ -93,7 +93,6 @@ public class GlucoReaderApplication extends Application {
             this.primaryStage = primaryStage;
       }
 
-      //Stopping app
       @Override
       public void stop() throws Exception {
           /*
