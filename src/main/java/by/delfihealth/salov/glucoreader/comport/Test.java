@@ -1,14 +1,14 @@
 package by.delfihealth.salov.glucoreader.comport;
 
-import by.delfihealth.salov.glucoreader.comport.entities.Command;
+import by.delfihealth.salov.glucoreader.comport.entities.RequestToComPort;
 import by.delfihealth.salov.glucoreader.comport.entities.HexByteData;
-import by.delfihealth.salov.glucoreader.comport.enums.CommandType;
+import by.delfihealth.salov.glucoreader.comport.enums.RequestType;
 import by.delfihealth.salov.glucoreader.comport.enums.HexByteType;
-import by.delfihealth.salov.glucoreader.comport.examples.CRC16;
+import by.delfihealth.salov.glucoreader.comport.services.ComPortCommandService;
 import by.delfihealth.salov.glucoreader.comport.services.ControlSumCRC16Service;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
-import java.util.HexFormat;
 import java.util.List;
 
 public class Test {
@@ -21,13 +21,16 @@ public class Test {
             getProtocolVersionDate.add(new HexByteData("0x01" , HexByteType.CMD));
 
             ControlSumCRC16Service controlSumCRC16Service = new ControlSumCRC16Service();
-            String highByteOfSum = controlSumCRC16Service.getHighByteOfSum(getProtocolVersionDate);
-            String lowByteOfSum = controlSumCRC16Service.getLowByteOfSum(getProtocolVersionDate);
+            Pair<String, String> highLowByteOfSum = controlSumCRC16Service.getHighLowByteOfSum(getProtocolVersionDate);
 
-            getProtocolVersionDate.add(new HexByteData(highByteOfSum , HexByteType.CRC_HI));
-            getProtocolVersionDate.add(new HexByteData(lowByteOfSum , HexByteType.CRC_LO));
+            getProtocolVersionDate.add(new HexByteData(highLowByteOfSum.getValue() , HexByteType.CRC_LO));
+            getProtocolVersionDate.add(new HexByteData(highLowByteOfSum.getKey() , HexByteType.CRC_HI));
 
-            Command getProtocolVersionCommand = new Command(CommandType.GET_PROTOCOL_VERSION,getProtocolVersionDate);
+            RequestToComPort getProtocolVersionRequestToComPort = new RequestToComPort(RequestType.GET_PROTOCOL_VERSION,getProtocolVersionDate);
 
+            ComPortCommandService comPortCommandService =
+                  new ComPortCommandService(
+                        "COM2", 19200, 8,  1, 2, 15, 150);
+            comPortCommandService.sendCommand(getProtocolVersionRequestToComPort);
       }
 }
