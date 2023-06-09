@@ -28,6 +28,7 @@ public enum RequestType {
       ),
       GET_CONVERTER_TYPE(
             "0x31",
+
             "Request to read converter type, serial number, plate version, firmware version",
             6
       ),

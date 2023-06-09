@@ -4,6 +4,7 @@ import by.delfihealth.salov.glucoreader.comport.entities.RequestToComPort;
 import by.delfihealth.salov.glucoreader.comport.entities.HexByteData;
 import by.delfihealth.salov.glucoreader.comport.enums.RequestType;
 import by.delfihealth.salov.glucoreader.comport.enums.HexByteType;
+import by.delfihealth.salov.glucoreader.comport.enums.ResponseType;
 import by.delfihealth.salov.glucoreader.comport.services.ComPortCommandService;
 import by.delfihealth.salov.glucoreader.comport.services.ControlSumCRC16Service;
 import javafx.util.Pair;
@@ -31,6 +32,7 @@ public class Test {
             ComPortCommandService comPortCommandService =
                   new ComPortCommandService(
                         "COM2", 19200, 8,  1, 2, 15, 150);
-            comPortCommandService.sendCommand(getProtocolVersionRequestToComPort);
+            List<String> strings = comPortCommandService.sendCommand(getProtocolVersionRequestToComPort);
+            System.out.println(strings);
       }
 }

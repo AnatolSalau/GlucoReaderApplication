@@ -10,10 +10,25 @@ public class HexByteData {
       private final String value;
       private final HexByteType type;
 
+      public HexByteData(String value, HexByteType type) {
+            this.value = value;
+            this.type = type;
+      }
+
+      public HexByteData (byte dataByte, HexByteType type) {
+            this.value = getHexStrFromByte(dataByte);
+            this.type = type;
+      }
+
       public byte getByteValue() {
             String substringValue = value.substring(2);
             byte[] bytes = HexFormat.of().parseHex(substringValue);
             byte resultByte = bytes[0];
             return resultByte;
+      }
+
+      private String getHexStrFromByte(byte data) {
+            String hexStr = "0x" + Integer.toHexString(data);
+            return hexStr;
       }
 }

@@ -2,11 +2,12 @@ package by.delfihealth.salov.glucoreader.comport.services;
 
 import by.delfihealth.salov.glucoreader.comport.entities.RequestToComPort;
 import by.delfihealth.salov.glucoreader.comport.entities.HexByteData;
-import by.delfihealth.salov.glucoreader.comport.enums.RequestType;
+import by.delfihealth.salov.glucoreader.comport.entities.ResponseFromComPort;
 import by.delfihealth.salov.glucoreader.comport.enums.ResponseType;
 import com.fazecast.jSerialComm.SerialPort;
 import lombok.AllArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -32,8 +33,11 @@ public class ComPortCommandService {
             commPort.setComPortParameters(baudRate,
                   dataBits,  stopBits, parity);
 
-            commPort.writeBytes(convertCommandToByteArr(requestToComPort),
+            commPort.writeBytes(convertRequestToByteArr(requestToComPort),
                   requestToComPort.getDataList().size());
+
+            ResponseType responseType = ResponseType.valueOf(requestToComPort.getType().toString());
+            byte[] responseBytes = new byte[responseType.numberBytesInResponse];
 
             for (int i = 0; i < 10; i++) {
                   try {
@@ -41,14 +45,22 @@ public class ComPortCommandService {
                   } catch (InterruptedException e) {
                         e.printStackTrace();
                   }
-/*                  byte[] bytes = new byte[];*/
+                  int wasRead = commPort.readBytes(responseBytes, responseBytes.length);
+                  if (wasRead > 0 ) {
+                        break;
+                  }
+            }
+
+            List<String> responseHexList = new ArrayList<>();
+            for (byte responseByte : responseBytes) {
+                  responseHexList.add("0x" + Integer.toHexString(responseByte));
             }
 
             commPort.closePort();
-            return null;
+            return responseHexList;
       }
 
-      private byte [] convertCommandToByteArr(RequestToComPort requestToComPort) {
+      private byte [] convertRequestToByteArr(RequestToComPort requestToComPort) {
             List<HexByteData> dataList = requestToComPort.getDataList();
             byte[] result = new byte[dataList.size()];
             for (int i = 0; i < dataList.size(); i++) {
@@ -57,4 +69,7 @@ public class ComPortCommandService {
             return result;
       }
 
+      private ResponseFromComPort convertByteArrToResponse(byte[] data) {
+            return null;
+      }
 }
