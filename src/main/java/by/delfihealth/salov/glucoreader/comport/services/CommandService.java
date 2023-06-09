@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 @AllArgsConstructor
-public class ComPortCommandService {
+public class CommandService {
 
       private final String portSystemName;
       private final int baudRate;
@@ -32,8 +32,8 @@ public class ComPortCommandService {
             commPort.openPort();
             commPort.setComPortParameters(baudRate,
                   dataBits,  stopBits, parity);
-
-            commPort.writeBytes(convertRequestToByteArr(requestToComPort),
+            ConvertService convertService = new ConvertService();
+            commPort.writeBytes(convertService.convertRequestToByteArr(requestToComPort),
                   requestToComPort.getDataList().size());
 
             ResponseType responseType = ResponseType.valueOf(requestToComPort.getType().toString());
@@ -60,16 +60,4 @@ public class ComPortCommandService {
             return responseHexList;
       }
 
-      private byte [] convertRequestToByteArr(RequestToComPort requestToComPort) {
-            List<HexByteData> dataList = requestToComPort.getDataList();
-            byte[] result = new byte[dataList.size()];
-            for (int i = 0; i < dataList.size(); i++) {
-                  result[i] = dataList.get(i).getByteValue();
-            }
-            return result;
-      }
-
-      private ResponseFromComPort convertByteArrToResponse(byte[] data) {
-            return null;
-      }
 }
