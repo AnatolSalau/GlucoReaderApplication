@@ -26,7 +26,9 @@ public class HexByteData {
             byte resultByte = bytes[0];
             return resultByte;
       }
+      /*
 
+       */
       private String getHexStrFromByte(byte data) {
             String hexStr = "0x" + Integer.toHexString(data);
             return hexStr;

@@ -20,7 +20,7 @@ public class ComPortTest {
             System.out.println("Response from port : " + Arrays.toString(responseProtocolVersion));
             System.out.println("__________________________________________________________________________\n");
 
-            System.out.println("__________________________________________________________________________ \n");
+            System.out.println("__________________________________________________________________________\n");
             System.out.println("GetDeviceType");
             String[] requestDeviceType = {"02","06","00","02","60","5C"};
             System.out.println("Request to port : " + Arrays.toString(requestDeviceType));

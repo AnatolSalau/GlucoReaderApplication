@@ -1,7 +1,6 @@
 package by.delfihealth.salov.glucoreader.comport.services;
 
 import by.delfihealth.salov.glucoreader.comport.entities.RequestToComPort;
-import by.delfihealth.salov.glucoreader.comport.entities.HexByteData;
 import by.delfihealth.salov.glucoreader.comport.entities.ResponseFromComPort;
 import by.delfihealth.salov.glucoreader.comport.enums.ResponseType;
 import com.fazecast.jSerialComm.SerialPort;
@@ -20,20 +19,20 @@ public class CommandService {
       private final int stopBits;
       private final int parity;
       private final int minPauseTimeMs;
-      private final int mixPauseTimeMs;
+      private final int maxPauseTimeMs;
 
       /**
        * Write request  and read response bytes to CommPort
        * @param requestToComPort - data bytes and description
        * @return
        */
-      public List<String> sendCommand (RequestToComPort requestToComPort) {
+      public ResponseFromComPort sendCommand (RequestToComPort requestToComPort) {
             SerialPort commPort = SerialPort.getCommPort(portSystemName);
             commPort.openPort();
             commPort.setComPortParameters(baudRate,
                   dataBits,  stopBits, parity);
-            ConvertService convertService = new ConvertService();
-            commPort.writeBytes(convertService.convertRequestToByteArr(requestToComPort),
+            RequestService requestService = new RequestService();
+            commPort.writeBytes(requestService.convertRequestToByteArr(requestToComPort),
                   requestToComPort.getDataList().size());
 
             ResponseType responseType = ResponseType.valueOf(requestToComPort.getType().toString());
@@ -51,13 +50,11 @@ public class CommandService {
                   }
             }
 
-            List<String> responseHexList = new ArrayList<>();
-            for (byte responseByte : responseBytes) {
-                  responseHexList.add("0x" + Integer.toHexString(responseByte));
-            }
+            ResponseService responseService = new ResponseService();
+            ResponseFromComPort responseFromComPort = responseService.convertByteArrToResponse(responseBytes, responseType);
 
             commPort.closePort();
-            return responseHexList;
+            return responseFromComPort;
       }
 
 }
