@@ -30,7 +30,10 @@ public class HexByteData {
 
        */
       private String getHexStrFromByte(byte data) {
-            String hexStr = "0x" + Integer.toHexString(data);
-            return hexStr;
+            String string = Integer.toHexString(data);
+            if (string.length() == 1) {
+                  return "0x" + Integer.toHexString(data) + "0";
+            }
+            return "0x" + Integer.toHexString(data);
       }
 }

@@ -69,4 +69,31 @@ public class ResponseService {
             return response;
       }
 
+      private ResponseFromComPort byteArrToGetDeviceType(byte[] data) {
+            List<HexByteData> dataList = new ArrayList<>();
+
+            HexByteData dataStx = new HexByteData(data[0], HexByteType.STX);
+            dataList.add(dataStx);
+            HexByteData dataLenLo = new HexByteData(data[1], HexByteType.LEN_LO);
+            dataList.add(dataLenLo);
+            HexByteData dataLenHi = new HexByteData(data[2], HexByteType.LEN_HI);
+            dataList.add(dataLenHi);
+            HexByteData dataCmd = new HexByteData(data[3], HexByteType.CMD);
+            dataList.add(dataCmd);
+            HexByteData dataDeviceType = new HexByteData(data[4], HexByteType.DEVICE_TYPE);
+            dataList.add(dataDeviceType);
+            HexByteData dataSerialId = new HexByteData(data[5], HexByteType.SERIAL_ID);
+            dataList.add(dataSerialId);
+
+            HexByteData dataCrcLo = new HexByteData(data[6], HexByteType.CRC_LO);
+            dataList.add(dataCrcLo);
+            HexByteData dataCrcHi = new HexByteData(data[7], HexByteType.CRC_HI);
+            dataList.add(dataCrcHi);
+
+            ResponseFromComPort response = new ResponseFromComPort(
+                  ResponseType.GET_PROTOCOL_VERSION,
+
+                  dataList);
+            return response;
+      }
 }

@@ -27,12 +27,12 @@ public class Test {
             getProtocolVersionDate.add(new HexByteData(highLowByteOfSum.getValue() , HexByteType.CRC_LO));
             getProtocolVersionDate.add(new HexByteData(highLowByteOfSum.getKey() , HexByteType.CRC_HI));
 
-            RequestToComPort getProtocolVersionRequestToComPort = new RequestToComPort(RequestType.GET_PROTOCOL_VERSION,getProtocolVersionDate);
-
+            RequestToComPort getProtocolVersionRequest = new RequestToComPort(RequestType.GET_PROTOCOL_VERSION,getProtocolVersionDate);
+            System.out.println(getProtocolVersionRequest);
             CommandService commandService =
                   new CommandService(
-                        "COM2", 19200, 8,  1, 2, 15, 150);
-            ResponseFromComPort responseFromComPort = commandService.sendCommand(getProtocolVersionRequestToComPort);
+                        "COM2", 19200, 8,  1, 2);
+            ResponseFromComPort responseFromComPort = commandService.sendCommand(getProtocolVersionRequest);
             System.out.println(responseFromComPort);
       }
 }

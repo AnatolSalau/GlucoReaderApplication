@@ -18,8 +18,6 @@ public class CommandService {
       private final int dataBits;
       private final int stopBits;
       private final int parity;
-      private final int minPauseTimeMs;
-      private final int maxPauseTimeMs;
 
       /**
        * Write request  and read response bytes to CommPort
