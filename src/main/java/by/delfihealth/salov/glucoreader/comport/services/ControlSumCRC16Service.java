@@ -21,5 +21,4 @@ public class ControlSumCRC16Service {
             checksum = null;
             return new Pair<>(crcHiHex, crcLoHex);
       }
-
 }

@@ -34,6 +34,6 @@ public class HexByteData {
             if (string.length() == 1) {
                   return "0x" + Integer.toHexString(data) + "0";
             }
-            return "0x" + Integer.toHexString(data);
+            return "0x" + Integer.toHexString(data); 
       }
 }

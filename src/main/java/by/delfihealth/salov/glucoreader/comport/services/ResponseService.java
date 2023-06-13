@@ -17,13 +17,14 @@ public class ResponseService {
                         return byteArrToGetProtocolVersion(data);
                   }
                   case GET_DEVICE_TYPE -> {
-                        return null;
+                        return byteArrToGetDeviceType(data);
                   }
                   case GET_STATE -> {
                         return null;
                   }
                   case GET_DATE_TIME -> {
                         return null;
+
                   }
                   case GET_VALUES -> {
                         return null;
@@ -82,17 +83,35 @@ public class ResponseService {
             dataList.add(dataCmd);
             HexByteData dataDeviceType = new HexByteData(data[4], HexByteType.DEVICE_TYPE);
             dataList.add(dataDeviceType);
-            HexByteData dataSerialId = new HexByteData(data[5], HexByteType.SERIAL_ID);
-            dataList.add(dataSerialId);
-
-            HexByteData dataCrcLo = new HexByteData(data[6], HexByteType.CRC_LO);
+            HexByteData dataSerialId1 = new HexByteData(data[5], HexByteType.SERIAL_ID);
+            dataList.add(dataSerialId1);
+            HexByteData dataSerialId2 = new HexByteData(data[6], HexByteType.SERIAL_ID);
+            dataList.add(dataSerialId2);
+            HexByteData dataSerialId3 = new HexByteData(data[7], HexByteType.SERIAL_ID);
+            dataList.add(dataSerialId3);
+            HexByteData dataSerialId4 = new HexByteData(data[8], HexByteType.SERIAL_ID);
+            dataList.add(dataSerialId4);
+            HexByteData dataSerialId5 = new HexByteData(data[9], HexByteType.SERIAL_ID);
+            dataList.add(dataSerialId5);
+            HexByteData dataSerialId6 = new HexByteData(data[10], HexByteType.SERIAL_ID);
+            dataList.add(dataSerialId6);
+            HexByteData dataSerialId7 = new HexByteData(data[11], HexByteType.SERIAL_ID);
+            dataList.add(dataSerialId7);
+            HexByteData dataSerialId8 = new HexByteData(data[12], HexByteType.SERIAL_ID);
+            dataList.add(dataSerialId8);
+            HexByteData dataHwVersion = new HexByteData(data[13], HexByteType.HW_VERSION);
+            dataList.add(dataHwVersion);
+            HexByteData dataSwVersionLowByte = new HexByteData(data[13], HexByteType.SW_VERSION_LO);
+            dataList.add(dataSwVersionLowByte);
+            HexByteData dataSwVersionHighByte = new HexByteData(data[14], HexByteType.SW_VERSION_HI);
+            dataList.add(dataSwVersionHighByte);
+            HexByteData dataCrcLo = new HexByteData(data[15], HexByteType.CRC_LO);
             dataList.add(dataCrcLo);
-            HexByteData dataCrcHi = new HexByteData(data[7], HexByteType.CRC_HI);
+            HexByteData dataCrcHi = new HexByteData(data[15], HexByteType.CRC_HI);
             dataList.add(dataCrcHi);
 
             ResponseFromComPort response = new ResponseFromComPort(
-                  ResponseType.GET_PROTOCOL_VERSION,
-
+                  ResponseType.GET_DEVICE_TYPE,
                   dataList);
             return response;
       }
