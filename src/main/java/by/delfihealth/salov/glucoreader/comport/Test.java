@@ -14,8 +14,8 @@ import java.util.List;
 
 public class Test {
       public static void main(String[] args) {
-            getProtocolVersion();
-/*            getState();*/
+            //getProtocolVersion();
+            getDeviceType();
 
       }
 
@@ -42,7 +42,7 @@ public class Test {
             System.out.println(responseFromComPort);
       }
 
-      private static void getState() {
+      private static void getDeviceType() {
             List<HexByteData> getStateDate = new ArrayList<>();
             getStateDate.add(new HexByteData("0x02" , HexByteType.STX));
             getStateDate.add(new HexByteData("0x06" , HexByteType.LEN_LO));
@@ -55,7 +55,7 @@ public class Test {
             getStateDate.add(new HexByteData(highLowByteOfSum.getValue() , HexByteType.CRC_LO));
             getStateDate.add(new HexByteData(highLowByteOfSum.getKey() , HexByteType.CRC_HI));
 
-            RequestToComPort getStateRequest = new RequestToComPort(RequestType.GET_STATE,getStateDate);
+            RequestToComPort getStateRequest = new RequestToComPort(RequestType.GET_DEVICE_TYPE,getStateDate);
             System.out.println(getStateRequest);
 
             CommandService commandService =

@@ -30,7 +30,8 @@ public class CommandService {
             commPort.setComPortParameters(baudRate,
                   dataBits,  stopBits, parity);
             RequestService requestService = new RequestService();
-            commPort.writeBytes(requestService.convertRequestToByteArr(requestToComPort),
+            byte[] bytesRequest = requestService.convertRequestToByteArr(requestToComPort);
+            commPort.writeBytes(bytesRequest,
                   requestToComPort.getDataList().size());
 
             ResponseType responseType = ResponseType.valueOf(requestToComPort.getType().toString());
