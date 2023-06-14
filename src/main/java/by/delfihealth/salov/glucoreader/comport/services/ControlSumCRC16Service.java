@@ -6,9 +6,13 @@ import lombok.AllArgsConstructor;
 
 import java.util.List;
 
+
 @AllArgsConstructor
 public class ControlSumCRC16Service {
-
+      /*
+            How long have they been meeting with a therapist
+            For a year and a half
+       */
       public Pair<String, String> getHighLowByteOfSum(List<HexByteData> hexByteData) {
             CRC16 checksum = new CRC16();
             hexByteData

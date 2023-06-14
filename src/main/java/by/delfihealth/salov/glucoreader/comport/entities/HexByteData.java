@@ -32,8 +32,21 @@ public class HexByteData {
       private String getHexStrFromByte(byte data) {
             String string = Integer.toHexString(data);
             if (string.length() == 1) {
-                  return "0x" + Integer.toHexString(data) + "0";
+                  return "0x" + "0" + Integer.toHexString(data);
+            }
+            if (string.startsWith("f")) {
+                  return "0x" + Integer.toHexString(data)
+                        .substring(string.length()-2)
+                        .toUpperCase();
             }
             return "0x" + Integer.toHexString(data); 
+      }
+
+      @Override
+      public String toString() {
+            return "HexByteData{" +
+                  "value='" + value + '\'' +
+                  ", type=" + type +
+                  '}' + "\n";
       }
 }

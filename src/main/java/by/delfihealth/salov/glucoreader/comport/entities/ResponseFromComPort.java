@@ -9,4 +9,12 @@ import java.util.List;
 public  class ResponseFromComPort {
       private final ResponseType type;
       private final List<HexByteData> dataList;
+
+      @Override
+      public String toString() {
+            return "ResponseFromComPort{" +
+                  "type=" + type +
+                  ", dataList=\n" + dataList +
+                  '}';
+      }
 }

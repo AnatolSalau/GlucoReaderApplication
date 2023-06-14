@@ -36,7 +36,6 @@ public class ComPortService {
             commPort.openPort();
             commPort.setComPortParameters(19200, 8,  1, 2);
 
-
             System.out.println("Com" + portSistemName + " is open: " + commPort.isOpen());
 
             byte[] arrByteFromHex = new byte[requestArrHex.length];

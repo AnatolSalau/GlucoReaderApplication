@@ -9,4 +9,12 @@ import java.util.List;
 public  class RequestToComPort {
       private final RequestType type;
       private final List<HexByteData> dataList;
+
+      @Override
+      public String toString() {
+            return "RequestToComPort{" +
+                  "type=" + type +
+                  ", dataList=\n" + dataList +
+                  '}';
+      }
 }
