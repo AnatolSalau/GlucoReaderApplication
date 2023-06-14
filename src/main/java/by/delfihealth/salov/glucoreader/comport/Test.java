@@ -17,8 +17,9 @@ import java.util.List;
  */
 public class Test {
       public static void main(String[] args) {
-            //getProtocolVersion();
+            getProtocolVersion();
             getDeviceType();
+            getState();
       }
 
       private static void getProtocolVersion() {
@@ -57,7 +58,30 @@ public class Test {
             getStateDate.add(new HexByteData(highLowByteOfSum.getValue() , HexByteType.CRC_LO));
             getStateDate.add(new HexByteData(highLowByteOfSum.getKey() , HexByteType.CRC_HI));
 
-            RequestToComPort getStateRequest = new RequestToComPort(RequestType.GET_DEVICE_TYPE,getStateDate);
+            RequestToComPort getDeviceTypeRequest = new RequestToComPort(RequestType.GET_DEVICE_TYPE,getStateDate);
+            System.out.println(getDeviceTypeRequest);
+
+            CommandService commandService =
+                  new CommandService(
+                        "COM2", 19200, 8,  1, 2);
+            ResponseFromComPort responseFromComPort = commandService.sendCommand(getDeviceTypeRequest);
+            System.out.println(responseFromComPort);
+      }
+
+      private static void getState() {
+            List<HexByteData> getStateDate = new ArrayList<>();
+            getStateDate.add(new HexByteData("0x02" , HexByteType.STX));
+            getStateDate.add(new HexByteData("0x06" , HexByteType.LEN_LO));
+            getStateDate.add(new HexByteData("0x00" , HexByteType.LEN_HI));
+            getStateDate.add(new HexByteData("0x03" , HexByteType.CMD));
+
+            ControlSumCRC16Service controlSumCRC16Service = new ControlSumCRC16Service();
+            Pair<String, String> highLowByteOfSum = controlSumCRC16Service.getHighLowByteOfSum(getStateDate);
+
+            getStateDate.add(new HexByteData(highLowByteOfSum.getValue() , HexByteType.CRC_LO));
+            getStateDate.add(new HexByteData(highLowByteOfSum.getKey() , HexByteType.CRC_HI));
+
+            RequestToComPort getStateRequest = new RequestToComPort(RequestType.GET_STATE,getStateDate);
             System.out.println(getStateRequest);
 
             CommandService commandService =

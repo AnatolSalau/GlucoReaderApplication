@@ -20,7 +20,7 @@ public class ResponseService {
                         return byteArrToGetDeviceType(data);
                   }
                   case GET_STATE -> {
-                        return null;
+                        return byteArrToGetState(data);
                   }
                   case GET_DATE_TIME -> {
                         return null;
@@ -112,6 +112,36 @@ public class ResponseService {
 
             ResponseFromComPort response = new ResponseFromComPort(
                   ResponseType.GET_DEVICE_TYPE,
+                  dataList);
+            return response;
+      }
+
+      private ResponseFromComPort byteArrToGetState(byte[] data) {
+            List<HexByteData> dataList = new ArrayList<>();
+
+            HexByteData dataStx = new HexByteData(data[0], HexByteType.STX);
+            dataList.add(dataStx);
+            HexByteData dataLenLo = new HexByteData(data[1], HexByteType.LEN_LO);
+            dataList.add(dataLenLo);
+            HexByteData dataLenHi = new HexByteData(data[2], HexByteType.LEN_HI);
+            dataList.add(dataLenHi);
+            HexByteData dataCmd = new HexByteData(data[3], HexByteType.CMD);
+            dataList.add(dataCmd);
+            HexByteData dataErrorCode = new HexByteData(data[4], HexByteType.ERROR_CODE);
+            dataList.add(dataErrorCode);
+            HexByteData dataTemperatureHigh = new HexByteData(data[5], HexByteType.TE_HI);
+            dataList.add(dataTemperatureHigh);
+            HexByteData dataTemperatureLow = new HexByteData(data[6], HexByteType.TE_LO);
+            dataList.add(dataTemperatureLow);
+            HexByteData dataBattery = new HexByteData(data[7], HexByteType.BATTERY);
+            dataList.add(dataBattery);
+            HexByteData dataCrcLo = new HexByteData(data[8], HexByteType.CRC_LO);
+            dataList.add(dataCrcLo);
+            HexByteData dataCrcHi = new HexByteData(data[9], HexByteType.CRC_HI);
+            dataList.add(dataCrcHi);
+
+            ResponseFromComPort response = new ResponseFromComPort(
+                  ResponseType.GET_STATE,
                   dataList);
             return response;
       }

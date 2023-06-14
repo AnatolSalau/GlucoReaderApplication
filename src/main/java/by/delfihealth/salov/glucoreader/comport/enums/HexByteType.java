@@ -21,7 +21,12 @@ public enum HexByteType {
       SERIAL_ID_B7("ID of device, byte № 7"),
       HW_VERSION("Hardware version"),
       SW_VERSION_LO("Software version, low byte"),
-      SW_VERSION_HI("Software version, high byte");
+      SW_VERSION_HI("Software version, high byte"),
+      ERROR_CODE("Error code"),
+      TE_LO("Temperature, low byte"),
+      TE_HI("Temperature, high byte"),
+      BATTERY("Battery level")
+      ;
 
       public final String textDescription;
 

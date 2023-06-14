@@ -32,14 +32,14 @@ public class HexByteData {
       private String getHexStrFromByte(byte data) {
             String string = Integer.toHexString(data);
             if (string.length() == 1) {
-                  return "0x" + "0" + Integer.toHexString(data);
+                  return "0x" + "0" + Integer.toHexString(data).toUpperCase();
             }
             if (string.startsWith("f")) {
                   return "0x" + Integer.toHexString(data)
                         .substring(string.length()-2)
                         .toUpperCase();
             }
-            return "0x" + Integer.toHexString(data); 
+            return "0x" + Integer.toHexString(data).toUpperCase();
       }
 
       @Override
