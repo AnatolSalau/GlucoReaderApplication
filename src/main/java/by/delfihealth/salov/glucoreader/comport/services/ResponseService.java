@@ -23,11 +23,11 @@ public class ResponseService {
                         return byteArrToGetState(data);
                   }
                   case GET_DATE_TIME -> {
-                        return null;
+                        return byteArrToGetDateTime( data);
 
                   }
                   case GET_VALUES -> {
-                        return null;
+                        return byteArrToGetValues( data);
                   }
                   case GET_CONVERTER_TYPE -> {
                         return null;
@@ -142,6 +142,63 @@ public class ResponseService {
 
             ResponseFromComPort response = new ResponseFromComPort(
                   ResponseType.GET_STATE,
+                  dataList);
+            return response;
+      }
+
+      private ResponseFromComPort byteArrToGetDateTime(byte[] data) {
+            List<HexByteData> dataList = new ArrayList<>();
+
+            HexByteData dataStx = new HexByteData(data[0], HexByteType.STX);
+            dataList.add(dataStx);
+            HexByteData dataLenLo = new HexByteData(data[1], HexByteType.LEN_LO);
+            dataList.add(dataLenLo);
+            HexByteData dataLenHi = new HexByteData(data[2], HexByteType.LEN_HI);
+            dataList.add(dataLenHi);
+            HexByteData dataCmd = new HexByteData(data[3], HexByteType.CMD);
+            dataList.add(dataCmd);
+            HexByteData dataDateYear = new HexByteData(data[4], HexByteType.DATE_YEAR);
+            dataList.add(dataDateYear);
+            HexByteData dataDateMonth = new HexByteData(data[5], HexByteType.DATE_MONTH);
+            dataList.add(dataDateMonth);
+            HexByteData dataDateDay = new HexByteData(data[6], HexByteType.DATE_MONTH);
+            dataList.add(dataDateDay);
+            HexByteData dataTimeHour = new HexByteData(data[7], HexByteType.TIME_HOUR);
+            dataList.add(dataTimeHour);
+            HexByteData dataTimeMin = new HexByteData(data[8], HexByteType.TIME_MINUTE);
+            dataList.add(dataTimeMin);
+            HexByteData dataTimeSec = new HexByteData(data[9], HexByteType.TIME_SEC);
+            dataList.add(dataTimeSec);
+
+            HexByteData dataCrcLo = new HexByteData(data[10], HexByteType.CRC_LO);
+            dataList.add(dataCrcLo);
+            HexByteData dataCrcHi = new HexByteData(data[11], HexByteType.CRC_HI);
+            dataList.add(dataCrcHi);
+
+            ResponseFromComPort response = new ResponseFromComPort(
+                  ResponseType.GET_DATE_TIME,
+                  dataList);
+            return response;
+      }
+
+      private ResponseFromComPort byteArrToGetValues(byte[] data) {
+            List<HexByteData> dataList = new ArrayList<>();
+
+            HexByteData dataStx = new HexByteData(data[0], HexByteType.STX);
+            dataList.add(dataStx);
+            HexByteData dataLenLo = new HexByteData(data[1], HexByteType.LEN_LO);
+            dataList.add(dataLenLo);
+            HexByteData dataLenHi = new HexByteData(data[2], HexByteType.LEN_HI);
+            dataList.add(dataLenHi);
+            HexByteData dataCmd = new HexByteData(data[3], HexByteType.CMD);
+            dataList.add(dataCmd);
+            HexByteData dataCrcLo = new HexByteData(data[10], HexByteType.CRC_LO);
+            dataList.add(dataCrcLo);
+            HexByteData dataCrcHi = new HexByteData(data[11], HexByteType.CRC_HI);
+            dataList.add(dataCrcHi);
+
+            ResponseFromComPort response = new ResponseFromComPort(
+                  ResponseType.GET_DATE_TIME,
                   dataList);
             return response;
       }

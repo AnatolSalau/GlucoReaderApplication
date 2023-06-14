@@ -25,7 +25,17 @@ public enum HexByteType {
       ERROR_CODE("Error code"),
       TE_LO("Temperature, low byte"),
       TE_HI("Temperature, high byte"),
-      BATTERY("Battery level")
+      BATTERY("Battery level"),
+      DATE_YEAR("Date year"),
+      DATE_MONTH("Date month"),
+      DATE_DAY("Date day"),
+      TIME_HOUR("Time hour"),
+      TIME_MINUTE("Time minute"),
+      TIME_SEC("Time second"),
+      START_LO("Start index, low byte"),
+      START_HI("Start index, high byte"),
+      STOP_LO("Stop index, low byte"),
+      STOP_HI("Stop index, high byte")
       ;
 
       public final String textDescription;

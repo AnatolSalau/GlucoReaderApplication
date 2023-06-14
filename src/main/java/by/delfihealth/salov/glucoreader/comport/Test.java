@@ -20,6 +20,8 @@ public class Test {
             getProtocolVersion();
             getDeviceType();
             getState();
+            getDateTime();
+            getValues();
       }
 
       private static void getProtocolVersion() {
@@ -84,6 +86,54 @@ public class Test {
             RequestToComPort getStateRequest = new RequestToComPort(RequestType.GET_STATE,getStateDate);
             System.out.println(getStateRequest);
 
+            CommandService commandService =
+                  new CommandService(
+                        "COM2", 19200, 8,  1, 2);
+            ResponseFromComPort responseFromComPort = commandService.sendCommand(getStateRequest);
+            System.out.println(responseFromComPort);
+      }
+
+      private static void getDateTime() {
+            List<HexByteData> getStateDate = new ArrayList<>();
+            getStateDate.add(new HexByteData("0x02" , HexByteType.STX));
+            getStateDate.add(new HexByteData("0x06" , HexByteType.LEN_LO));
+            getStateDate.add(new HexByteData("0x00" , HexByteType.LEN_HI));
+            getStateDate.add(new HexByteData("0x04" , HexByteType.CMD));
+
+            ControlSumCRC16Service controlSumCRC16Service = new ControlSumCRC16Service();
+            Pair<String, String> highLowByteOfSum = controlSumCRC16Service.getHighLowByteOfSum(getStateDate);
+
+            getStateDate.add(new HexByteData(highLowByteOfSum.getValue() , HexByteType.CRC_LO));
+            getStateDate.add(new HexByteData(highLowByteOfSum.getKey() , HexByteType.CRC_HI));
+
+            RequestToComPort getStateRequest = new RequestToComPort(RequestType.GET_DATE_TIME,getStateDate);
+            System.out.println(getStateRequest);
+            CommandService commandService =
+                  new CommandService(
+                        "COM2", 19200, 8,  1, 2);
+            ResponseFromComPort responseFromComPort = commandService.sendCommand(getStateRequest);
+            System.out.println(responseFromComPort);
+      }
+
+      private static void getValues() {
+            List<HexByteData> getValuesDate = new ArrayList<>();
+            getValuesDate.add(new HexByteData("0x02" , HexByteType.STX));
+            getValuesDate.add(new HexByteData("0x0A" , HexByteType.LEN_LO));
+            getValuesDate.add(new HexByteData("0x00" , HexByteType.LEN_HI));
+            getValuesDate.add(new HexByteData("0x05" , HexByteType.CMD));
+            getValuesDate.add(new HexByteData("0x00" , HexByteType.START_LO));
+            getValuesDate.add(new HexByteData("0x00" , HexByteType.START_HI));
+            getValuesDate.add(new HexByteData("0x00" , HexByteType.STOP_LO));
+            getValuesDate.add(new HexByteData("0x04" , HexByteType.STOP_HI));
+
+            ControlSumCRC16Service controlSumCRC16Service = new ControlSumCRC16Service();
+            Pair<String, String> highLowByteOfSum = controlSumCRC16Service.getHighLowByteOfSum(getValuesDate);
+
+            getValuesDate.add(new HexByteData(highLowByteOfSum.getValue() , HexByteType.CRC_LO));
+            getValuesDate.add(new HexByteData(highLowByteOfSum.getKey() , HexByteType.CRC_HI));
+
+            RequestToComPort getStateRequest = new RequestToComPort(RequestType.GET_VALUES,getValuesDate);
+            System.out.println(getStateRequest);
             CommandService commandService =
                   new CommandService(
                         "COM2", 19200, 8,  1, 2);
