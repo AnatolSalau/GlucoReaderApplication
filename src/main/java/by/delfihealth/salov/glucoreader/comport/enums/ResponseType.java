@@ -13,7 +13,7 @@ public enum ResponseType {
       ),
       GET_STATE(
             "0x03",
-            "Response to read device state - error code, temperature, battery level",
+            "Response  to read device state - error code, temperature, battery level",
             10
       ),
       GET_DATE_TIME(

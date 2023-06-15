@@ -1,13 +1,14 @@
 package by.delfihealth.salov.glucoreader.comport.enums;
 
+
 public enum HexByteType {
       STX("Start of data packet"),
       LEN_LO("Packet length, low byte"),
       LEN_HI("Packet length, high byte"),
       CMD("Command code"),
       DATA("Something data"),
-      DATA_VERSION_LOW("Version low"),
-      DATA_VERSION_HIGH("Version high"),
+      VERSION_LOW("Protocol version low"),
+      VERSION_HIGH("Protocol version high"),
       CRC_LO("Control sum, low byte"),
       CRC_HI("Control sum, high byte"),
       DEVICE_TYPE("Type of device"),
@@ -23,8 +24,8 @@ public enum HexByteType {
       SW_VERSION_LO("Software version, low byte"),
       SW_VERSION_HI("Software version, high byte"),
       ERROR_CODE("Error code"),
-      TE_LO("Temperature, low byte"),
-      TE_HI("Temperature, high byte"),
+      TE_LO("Temperature, low byte, fractional part"),
+      TE_HI("Temperature, high byte, integer part"),
       BATTERY("Battery level"),
       DATE_YEAR("Date year"),
       DATE_MONTH("Date month"),
@@ -35,7 +36,14 @@ public enum HexByteType {
       START_LO("Start index, low byte"),
       START_HI("Start index, high byte"),
       STOP_LO("Stop index, low byte"),
-      STOP_HI("Stop index, high byte")
+      STOP_HI("Stop index, high byte"),
+      INDEX_LO("Index number, low byte"),
+      INDEX_HI("Index number, high byte"),
+      GLUCOSE_HI("Glucose value, high byte, integer part"),
+      GLUCOSE_LO("Glucose value, low byte, fractional part"),
+      HEMATOCRIT_HI("Glucose value, high byte, integer part"),
+      HEMATOCRIT_LO("Glucose value, low byte, fractional part"),
+      STATE("State")
       ;
 
       public final String textDescription;

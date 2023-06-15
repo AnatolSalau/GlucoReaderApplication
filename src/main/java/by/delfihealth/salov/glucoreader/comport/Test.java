@@ -17,11 +17,12 @@ import java.util.List;
  */
 public class Test {
       public static void main(String[] args) {
-            getProtocolVersion();
+/*            getProtocolVersion();
             getDeviceType();
             getState();
             getDateTime();
-            getValues();
+            getValues();*/
+            getConverterType();
       }
 
       private static void getProtocolVersion() {
@@ -124,7 +125,7 @@ public class Test {
             getValuesDate.add(new HexByteData("0x00" , HexByteType.START_LO));
             getValuesDate.add(new HexByteData("0x00" , HexByteType.START_HI));
             getValuesDate.add(new HexByteData("0x00" , HexByteType.STOP_LO));
-            getValuesDate.add(new HexByteData("0x04" , HexByteType.STOP_HI));
+            getValuesDate.add(new HexByteData("0x00" , HexByteType.STOP_HI));
 
             ControlSumCRC16Service controlSumCRC16Service = new ControlSumCRC16Service();
             Pair<String, String> highLowByteOfSum = controlSumCRC16Service.getHighLowByteOfSum(getValuesDate);
@@ -138,6 +139,30 @@ public class Test {
                   new CommandService(
                         "COM2", 19200, 8,  1, 2);
             ResponseFromComPort responseFromComPort = commandService.sendCommand(getStateRequest);
+            System.out.println(responseFromComPort);
+      }
+
+      private static void getConverterType() {
+            List<HexByteData> getConverterTypeDate = new ArrayList<>();
+            getConverterTypeDate.add(new HexByteData("0x02" , HexByteType.STX));
+            getConverterTypeDate.add(new HexByteData("0x06" , HexByteType.LEN_LO));
+            getConverterTypeDate.add(new HexByteData("0x00" , HexByteType.LEN_HI));
+            getConverterTypeDate.add(new HexByteData("0x31" , HexByteType.CMD));
+            getConverterTypeDate.add(new HexByteData("0x20" , HexByteType.START_LO));
+            getConverterTypeDate.add(new HexByteData("0x49" , HexByteType.START_HI));
+
+            ControlSumCRC16Service controlSumCRC16Service = new ControlSumCRC16Service();
+            Pair<String, String> highLowByteOfSum = controlSumCRC16Service.getHighLowByteOfSum(getConverterTypeDate);
+
+            getConverterTypeDate.add(new HexByteData(highLowByteOfSum.getValue() , HexByteType.CRC_LO));
+            getConverterTypeDate.add(new HexByteData(highLowByteOfSum.getKey() , HexByteType.CRC_HI));
+
+            RequestToComPort getConverterTypeRequest = new RequestToComPort(RequestType.GET_CONVERTER_TYPE,getConverterTypeDate);
+            System.out.println(getConverterTypeRequest);
+            CommandService commandService =
+                  new CommandService(
+                        "COM2", 19200, 8,  1, 2);
+            ResponseFromComPort responseFromComPort = commandService.sendCommand(getConverterTypeRequest);
             System.out.println(responseFromComPort);
       }
 }
