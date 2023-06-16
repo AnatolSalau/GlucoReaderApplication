@@ -22,8 +22,9 @@ public class Test {
             getState();
             getDateTime();
             getValues();
-            getConverterType();*/
-            setDateTime();
+            getConverterType();
+            setDateTime();*/
+            setConverterType();
       }
 
 
@@ -186,6 +187,40 @@ public class Test {
             setDateTimeDate.add(new HexByteData(11, highLowByteOfSum.getKey() , HexByteType.CRC_HI));
 
             RequestToComPort getConverterTypeRequest = new RequestToComPort(RequestType.SET_DATE_TIME,setDateTimeDate);
+            System.out.println(getConverterTypeRequest);
+            CommandService commandService =
+                  new CommandService(
+                        "COM2", 19200, 8,  1, 2);
+            ResponseFromComPort responseFromComPort = commandService.sendCommand(getConverterTypeRequest);
+            System.out.println(responseFromComPort);
+      }
+
+      private static void setConverterType() {
+            List<HexByteData> setConverterTypeData = new ArrayList<>();
+            setConverterTypeData.add(new HexByteData(0, "0x02" , HexByteType.STX));
+            setConverterTypeData.add(new HexByteData(1, "0x12" , HexByteType.LEN_LO));
+            setConverterTypeData.add(new HexByteData(2, "0x00" , HexByteType.LEN_HI));
+            setConverterTypeData.add(new HexByteData(3, "0xB1" , HexByteType.CMD));
+            setConverterTypeData.add(new HexByteData(4, "0x02" , HexByteType.DEVICE_TYPE));
+            setConverterTypeData.add(new HexByteData(5, "0x00" , HexByteType.SERIAL_ID_B0));
+            setConverterTypeData.add(new HexByteData(6, "0x00" , HexByteType.SERIAL_ID_B1));
+            setConverterTypeData.add(new HexByteData(7, "0x00" , HexByteType.SERIAL_ID_B2));
+            setConverterTypeData.add(new HexByteData(8, "0x00" , HexByteType.SERIAL_ID_B3));
+            setConverterTypeData.add(new HexByteData(9, "0x00" , HexByteType.SERIAL_ID_B4));
+            setConverterTypeData.add(new HexByteData(10, "0x00" , HexByteType.SERIAL_ID_B5));
+            setConverterTypeData.add(new HexByteData(11, "0x00" , HexByteType.SERIAL_ID_B6));
+            setConverterTypeData.add(new HexByteData(12, "0x00" , HexByteType.SERIAL_ID_B7));
+            setConverterTypeData.add(new HexByteData(13, "0x01" , HexByteType.HW_VERSION));
+            setConverterTypeData.add(new HexByteData(14, "0x00" , HexByteType.SW_VERSION_LO));
+            setConverterTypeData.add(new HexByteData(15, "0x00" , HexByteType.SW_VERSION_HI));
+
+            ControlSumCRC16Service controlSumCRC16Service = new ControlSumCRC16Service();
+            Pair<String, String> highLowByteOfSum = controlSumCRC16Service.getHighLowByteOfSum(setConverterTypeData);
+
+            setConverterTypeData.add(new HexByteData(16, highLowByteOfSum.getValue() , HexByteType.CRC_LO));
+            setConverterTypeData.add(new HexByteData(17, highLowByteOfSum.getKey() , HexByteType.CRC_HI));
+
+            RequestToComPort getConverterTypeRequest = new RequestToComPort(RequestType.SET_CONVERTER_TYPE,setConverterTypeData);
             System.out.println(getConverterTypeRequest);
             CommandService commandService =
                   new CommandService(

@@ -36,7 +36,7 @@ public class ResponseService {
                         return byteArrToSetDateTime(data);
                   }
                   case SET_CONVERTER_TYPE -> {
-                        return null;
+                        return byteArrToSetConvertType(data);
                   }
             }
 
@@ -302,6 +302,31 @@ public class ResponseService {
 
             ResponseFromComPort response = new ResponseFromComPort(
                   ResponseType.SET_DATE_TIME,
+                  dataList);
+            return response;
+      }
+
+      private ResponseFromComPort byteArrToSetConvertType(byte[] data) {
+            List<HexByteData> dataList = new ArrayList<>();
+
+            HexByteData dataStx = new HexByteData(0, data[0], HexByteType.STX);
+            dataList.add(dataStx);
+            HexByteData dataLenLo = new HexByteData(1, data[1], HexByteType.LEN_LO);
+            dataList.add(dataLenLo);
+            HexByteData dataLenHi = new HexByteData(2, data[2], HexByteType.LEN_HI);
+            dataList.add(dataLenHi);
+            HexByteData dataCmd = new HexByteData(3, data[3], HexByteType.CMD);
+            dataList.add(dataCmd);
+            HexByteData dataError = new HexByteData(4, data[4], HexByteType.ERROR_CODE);
+            dataList.add(dataError);
+
+            HexByteData dataCrcLo = new HexByteData(5,data[5], HexByteType.CRC_LO);
+            dataList.add(dataCrcLo);
+            HexByteData dataCrcHi = new HexByteData(6,data[6], HexByteType.CRC_HI);
+            dataList.add(dataCrcHi);
+
+            ResponseFromComPort response = new ResponseFromComPort(
+                  ResponseType.SET_CONVERTER_TYPE,
                   dataList);
             return response;
       }
