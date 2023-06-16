@@ -15,13 +15,13 @@ import java.util.List;
 
 public class Test {
       public static void main(String[] args) {
-/*            getProtocolVersion();
+            getProtocolVersion();
             getDeviceType();
             getState();
             getDateTime();
             getValues();
             getConverterType();
-            setDateTime();*/
+            setDateTime();
             setConverterType();
       }
 
@@ -193,6 +193,9 @@ public class Test {
             System.out.println(responseFromComPort);
       }
 
+      /*
+
+       */
       private static void setConverterType() {
             List<HexByteData> setConverterTypeData = new ArrayList<>();
             setConverterTypeData.add(new HexByteData(0, "0x02" , HexByteType.STX));

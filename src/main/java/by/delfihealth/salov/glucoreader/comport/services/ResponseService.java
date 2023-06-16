@@ -24,7 +24,6 @@ public class ResponseService {
                   }
                   case GET_DATE_TIME -> {
                         return byteArrToGetDateTime( data);
-
                   }
                   case GET_VALUES -> {
                         return byteArrToGetValues( data);
