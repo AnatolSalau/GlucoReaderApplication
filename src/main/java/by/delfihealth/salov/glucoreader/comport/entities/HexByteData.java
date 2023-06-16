@@ -7,15 +7,18 @@ import java.util.HexFormat;
 
 @Data
 public class HexByteData {
+      private int number;
       private final String value;
       private final HexByteType type;
 
-      public HexByteData(String value, HexByteType type) {
+      public HexByteData(int number, String value, HexByteType type) {
+            this.number = number;
             this.value = value;
             this.type = type;
       }
 
-      public HexByteData (byte dataByte, HexByteType type) {
+      public HexByteData (int number, byte dataByte, HexByteType type) {
+            this.number = number;
             this.value = getHexStrFromByte(dataByte);
             this.type = type;
       }
@@ -44,9 +47,10 @@ public class HexByteData {
 
       @Override
       public String toString() {
-            return "HexByteData{" +
-                  "value='" + value + '\'' +
-                  ", type=" + type +
-                  '}' + "\n";
+            return "\n HexByteData{" +
+                  "\'number='" + number + '\'' +
+                  ", value='" + value  +
+                  "\', type=" + "\'" + type + "\'" +
+                  "}";
       }
 }

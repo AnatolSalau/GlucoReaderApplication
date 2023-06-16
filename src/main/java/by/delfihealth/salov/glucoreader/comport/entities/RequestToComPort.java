@@ -14,7 +14,7 @@ public  class RequestToComPort {
       public String toString() {
             return "RequestToComPort{" +
                   "type=" + type +
-                  ", dataList=\n" + dataList +
-                  '}';
+                  ", dataList=" + dataList +
+                  "'}\n";
       }
 }

@@ -14,7 +14,7 @@ public  class ResponseFromComPort {
       public String toString() {
             return "ResponseFromComPort{" +
                   "type=" + type +
-                  ", dataList=\n" + dataList +
-                  '}';
+                  ", dataList=" + dataList +
+                  "}\n";
       }
 }
