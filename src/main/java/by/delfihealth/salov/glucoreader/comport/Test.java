@@ -148,8 +148,6 @@ public class Test {
             getConverterTypeDate.add(new HexByteData("0x06" , HexByteType.LEN_LO));
             getConverterTypeDate.add(new HexByteData("0x00" , HexByteType.LEN_HI));
             getConverterTypeDate.add(new HexByteData("0x31" , HexByteType.CMD));
-            getConverterTypeDate.add(new HexByteData("0x20" , HexByteType.START_LO));
-            getConverterTypeDate.add(new HexByteData("0x49" , HexByteType.START_HI));
 
             ControlSumCRC16Service controlSumCRC16Service = new ControlSumCRC16Service();
             Pair<String, String> highLowByteOfSum = controlSumCRC16Service.getHighLowByteOfSum(getConverterTypeDate);
