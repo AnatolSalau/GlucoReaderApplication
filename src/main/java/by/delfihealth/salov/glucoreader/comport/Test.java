@@ -17,13 +17,15 @@ import java.util.List;
  */
 public class Test {
       public static void main(String[] args) {
-            getProtocolVersion();
+/*            getProtocolVersion();
             getDeviceType();
             getState();
             getDateTime();
             getValues();
-            getConverterType();
+            getConverterType();*/
+            setDateTime();
       }
+
 
       private static void getProtocolVersion() {
             List<HexByteData> getProtocolVersionDate = new ArrayList<>();
@@ -156,6 +158,34 @@ public class Test {
             getConverterTypeDate.add(new HexByteData(5, highLowByteOfSum.getKey() , HexByteType.CRC_HI));
 
             RequestToComPort getConverterTypeRequest = new RequestToComPort(RequestType.GET_CONVERTER_TYPE,getConverterTypeDate);
+            System.out.println(getConverterTypeRequest);
+            CommandService commandService =
+                  new CommandService(
+                        "COM2", 19200, 8,  1, 2);
+            ResponseFromComPort responseFromComPort = commandService.sendCommand(getConverterTypeRequest);
+            System.out.println(responseFromComPort);
+      }
+
+      private static void setDateTime() {
+            List<HexByteData> setDateTimeDate = new ArrayList<>();
+            setDateTimeDate.add(new HexByteData(0, "0x02" , HexByteType.STX));
+            setDateTimeDate.add(new HexByteData(1, "0x0C" , HexByteType.LEN_LO));
+            setDateTimeDate.add(new HexByteData(2, "0x00" , HexByteType.LEN_HI));
+            setDateTimeDate.add(new HexByteData(3, "0x81" , HexByteType.CMD));
+            setDateTimeDate.add(new HexByteData(4, "0x17" , HexByteType.DATE_YEAR));
+            setDateTimeDate.add(new HexByteData(5, "0x05" , HexByteType.DATE_MONTH));
+            setDateTimeDate.add(new HexByteData(6, "0x11" , HexByteType.DATE_DAY));
+            setDateTimeDate.add(new HexByteData(7, "0x10" , HexByteType.TIME_HOUR));
+            setDateTimeDate.add(new HexByteData(8, "0x11" , HexByteType.TIME_MINUTE));
+            setDateTimeDate.add(new HexByteData(9, "0x0A" , HexByteType.TIME_SEC));
+
+            ControlSumCRC16Service controlSumCRC16Service = new ControlSumCRC16Service();
+            Pair<String, String> highLowByteOfSum = controlSumCRC16Service.getHighLowByteOfSum(setDateTimeDate);
+
+            setDateTimeDate.add(new HexByteData(10, highLowByteOfSum.getValue() , HexByteType.CRC_LO));
+            setDateTimeDate.add(new HexByteData(11, highLowByteOfSum.getKey() , HexByteType.CRC_HI));
+
+            RequestToComPort getConverterTypeRequest = new RequestToComPort(RequestType.SET_DATE_TIME,setDateTimeDate);
             System.out.println(getConverterTypeRequest);
             CommandService commandService =
                   new CommandService(
