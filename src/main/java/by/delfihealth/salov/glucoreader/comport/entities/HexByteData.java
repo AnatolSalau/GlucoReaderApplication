@@ -4,7 +4,9 @@ import by.delfihealth.salov.glucoreader.comport.enums.HexByteType;
 import lombok.Data;
 
 import java.util.HexFormat;
+/*
 
+ */
 @Data
 public class HexByteData {
       private int number;
@@ -29,9 +31,7 @@ public class HexByteData {
             byte resultByte = bytes[0];
             return resultByte;
       }
-      /*
 
-       */
       private String getHexStrFromByte(byte data) {
             String string = Integer.toHexString(data);
             if (string.length() == 1) {
