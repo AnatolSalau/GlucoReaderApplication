@@ -96,7 +96,6 @@ public class GlucoReaderApplication extends Application {
       @Override
       public void stop() throws Exception {
           /*
-            
             //-----------------------------------------------------------------------
             //Get Html
             WebEngine engine = WindowController.getEngine();
