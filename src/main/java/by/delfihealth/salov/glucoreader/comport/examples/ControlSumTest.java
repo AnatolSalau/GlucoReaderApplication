@@ -29,7 +29,6 @@ public class ControlSumTest {
             byte[] bytes3 = HexFormat.of().parseHex(dataHex[3]);
             byte byte3 = bytes3[0];
 
-
             crc16.update(byte0);
             System.out.println(crc16);
 

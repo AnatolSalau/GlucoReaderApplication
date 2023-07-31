@@ -29,14 +29,15 @@ public class ComPortService {
                   .map(SerialPort::getDescriptivePortName).toList();
             return systemPortDescriptiveNames;
       }
-
+      
       public String[] getResponseFromPort(String portSistemName, String[] requestArrHex, int responseArrLength) {
             SerialPort commPort = SerialPort.getCommPort(portSistemName);
 
             commPort.openPort();
             commPort.setComPortParameters(19200, 8,  1, 2);
 
-            System.out.println("Com" + portSistemName + " is open: " + commPort.isOpen());
+            System.out.println(" " +
+                  "" + portSistemName + " is open: " + commPort.isOpen());
 
             byte[] arrByteFromHex = new byte[requestArrHex.length];
             for (int i = 0; i < requestArrHex.length; i++) {
@@ -61,6 +62,7 @@ public class ComPortService {
             }
 
             commPort.closePort();
+
             while (commPort.isOpen()) {
                   try {
                          TimeUnit.MILLISECONDS.sleep(10);
