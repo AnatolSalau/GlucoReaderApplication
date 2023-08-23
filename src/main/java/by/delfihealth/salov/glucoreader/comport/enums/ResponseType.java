@@ -53,6 +53,4 @@ public enum ResponseType {
             this.textDescription = textDescription;
             this.numberBytesInResponse = numberBytesInResponse;
       }
-
-
 }
